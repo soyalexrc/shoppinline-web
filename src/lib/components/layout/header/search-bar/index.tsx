@@ -2,7 +2,6 @@
 'use client';
 
 import React, { useState } from "react";
-import styles from "./styles.module.css";
 import {ChevronDownIcon, Search} from "lucide-react";
 import {
     DropdownMenu,

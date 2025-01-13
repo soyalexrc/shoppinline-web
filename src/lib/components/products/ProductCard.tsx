@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { Card, CardContent } from "@/lib/components/ui/card"
 import { Button } from "@/lib/components/ui/button"
 import { Heart, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image";
