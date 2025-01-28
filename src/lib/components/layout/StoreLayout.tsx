@@ -10,12 +10,12 @@ type Props = {
 
 export default function StoreLayout({children}: Readonly<Props>) {
     return (
-        <Fragment>
+        <div>
             <CampaignBar />
             <HelperBar />
             <Header />
             {children}
             <Footer />
-        </Fragment>
+        </div>
     );
 }

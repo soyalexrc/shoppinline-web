@@ -34,8 +34,9 @@ const Index = () => {
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
 
     return (
-        <div className=" flex items-center gap-2  bg-white ">
-            <div className="min-w-[580px] flex items-center px-4 py-2 h-12 rounded-lg shadow-md">
+        <div className=" flex flex-1 items-center gap-2  bg-white ">
+            {/* Search Input */}
+            <div className="flex-1 flex items-center px-4 py-2 h-12 rounded-lg shadow-md">
                 <input
                     type="text"
                     placeholder="Search for anything"
@@ -72,8 +73,6 @@ const Index = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            {/* Search Input */}
-
 
             {/* Search Button */}
             <button

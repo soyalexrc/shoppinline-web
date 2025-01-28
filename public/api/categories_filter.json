@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Audio Music",
+      "slug": "audio",
+      "type": "mega",
+      "productCount": "125",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate1.png",
+        "original": "/assets/images/category/collection_1.jpg"
+      },
+      "children": [
+        {
+            "id": 1,
+            "name": "Jewelry & Watches",
+            "slug": "jewelry-watches"
+        },
+        {
+            "id": 2,
+            "name": "Accessories",
+            "slug": "accessories"
+        },
+        {
+            "id": 3,
+            "name": "Wedding Rings",
+            "slug": "wedding-rings"
+        },
+        {
+            "id": 4,
+            "name": "Men Watches",
+            "slug": "men-watches"
+        },
+        {
+            "id": 5,
+            "name": "Woman Watches",
+            "slug": "woman-watches"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Garden & Kitchen",
+      "slug": "garden-kitchen",
+      "productCount": "120",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate4.png",
+        "original": "/assets/images/category/collection_4.jpg"
+      },
+      "children": [
+        {
+          "id": 1,
+          "name": "Helicopters & Parts",
+          "slug": "Helicopters-Parts"
+        },
+        {
+          "id": 2,
+          "name": "Toys & Hobbies",
+          "slug": "Toys-Hobbies"
+        },
+        {
+          "id": 3,
+          "name": "Outdoor & Traveling",
+          "slug": "Outdoor-Traveling"
+        },
+        {
+          "id": 4,
+          "name": "Home & Kitchen",
+          "slug": "home-kitchen"
+        },
+        {
+          "id": 5,
+          "name": "Lighting & Lamps",
+          "slug": "lighting-lamps"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Beaf Steak",
+      "slug": "beaf-steak",
+      "productCount": "620",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/beaf-steak.png"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Vitamin Items",
+      "slug": "vitamin-items",
+      "productCount": "420",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/vitamin-items.png"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Raw Chicken",
+      "slug": "raw-chicken",
+      "productCount": "430",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/raw-chicken.png"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Breakfast Item",
+      "slug": "breakfast-item",
+      "productCount": "430",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/breakfast-item.png"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Fish Items",
+      "slug": "fish-items",
+      "productCount": "430",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/fish-items.png"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Green Vegetables",
+      "slug": "green-vegetables",
+      "productCount": "430",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cate2.png",
+        "original": "/assets/images/category/green-vegetables.png"
+      }
+    }
+  ]
+}

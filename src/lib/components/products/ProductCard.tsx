@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
-import { Button } from "@/lib/components/ui/button"
-import { Heart, ChevronLeft, ChevronRight } from "lucide-react"
+import React, {useState} from 'react';
+import {Button} from "@/lib/components/ui/button"
+import {Heart, ChevronLeft, ChevronRight} from "lucide-react"
 import Image from "next/image";
 
 type Props = {
@@ -9,6 +9,8 @@ type Props = {
     price: number;
     rating: number;
     reviews: number;
+    isOffer?: boolean;
+    isHot?: boolean;
     brand: string;
     image: string;
 }
@@ -19,6 +21,8 @@ const ProductCard = ({
                          rating,
                          reviews,
                          brand,
+                         isOffer,
+                         isHot,
                          image
                      }: Props) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -53,13 +57,13 @@ const ProductCard = ({
                             className="absolute left-2 top-1/2 -translate-y-1/2 p-1 bg-white rounded-full shadow-md"
                             aria-label="Previous image"
                         >
-                            <ChevronLeft className="h-5 w-5" />
+                            <ChevronLeft className="h-5 w-5"/>
                         </button>
                         <button
                             className="absolute right-2 top-1/2 -translate-y-1/2 p-1 bg-white rounded-full shadow-md"
                             aria-label="Next image"
                         >
-                            <ChevronRight className="h-5 w-5" />
+                            <ChevronRight className="h-5 w-5"/>
                         </button>
 
                         {/* Wishlist Button */}
@@ -67,7 +71,7 @@ const ProductCard = ({
                             className="absolute right-2 top-2 p-1 bg-white rounded-full shadow-md"
                             aria-label="Add to wishlist"
                         >
-                            <Heart className="h-5 w-5" />
+                            <Heart className="h-5 w-5"/>
                         </button>
                     </div>
                 </div>
@@ -111,6 +115,20 @@ const ProductCard = ({
                     </div>
                 </div>
             </div>
+
+        {/*    is offer */}
+            {isOffer && (
+                <div className="absolute top-2 left-2 bg-red-600 text-white px-2">
+                    <span className="text-xs">Sale</span>
+                </div>
+            )}
+
+            {/*    is hot */}
+            {isHot && (
+                <div className={`absolute top-2 ${isOffer ? 'left-14' : 'left-2'} bg-orange-600 text-white px-2 `}>
+                    <span className="text-xs">Hot</span>
+                </div>
+            )}
         </div>
     );
 };
