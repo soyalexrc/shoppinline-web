@@ -26,6 +26,8 @@ const ProductCard = ({
   image,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
+  const sample = 'sample';
+  console.log(sample);
 
   return (
     <div
