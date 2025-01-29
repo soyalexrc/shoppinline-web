@@ -8,28 +8,28 @@ import { useIsMounted } from '@utils/use-is-mounted';
 import BackToTopButton from '@components/ui/back-to-top';
 
 export default function Home2Layout({
-                                          children,
-                                          lang,
-                                      }: {
-    children: React.ReactNode;
-    lang: string;
+  children,
+  lang,
+}: {
+  children: React.ReactNode;
+  lang: string;
 }) {
-    const isMounted = useIsMounted();
+  const isMounted = useIsMounted();
 
-    return (
-        <div className="page-type-home2 flex flex-col min-h-screen bg-skin-body">
-            <Header lang={lang} />
-            <main
-                className="relative flex-grow py-5 xl:py-8 "
-                style={{
-                    WebkitOverflowScrolling: 'touch',
-                }}
-            >
-                {children}
-            </main>
-            <Footer lang={lang} showWidgetServices={false} />
-            <BackToTopButton/>
-            <MobileNavigation lang={lang} />
-        </div>
-    );
+  return (
+    <div className="page-type-home2 flex flex-col min-h-screen bg-skin-body">
+      <Header lang={lang} />
+      <main
+        className="relative flex-grow py-5 xl:py-8 "
+        style={{
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        {children}
+      </main>
+      <Footer lang={lang} showWidgetServices={false} />
+      <BackToTopButton />
+      <MobileNavigation lang={lang} />
+    </div>
+  );
 }

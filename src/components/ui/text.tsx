@@ -5,7 +5,7 @@ interface Props {
   variant?: Variant;
   className?: string;
   style?: CSSProperties;
-  children?: React.ReactNode | any;
+  children?: React.ReactNode;
   html?: string;
 }
 
@@ -33,7 +33,7 @@ const Text: React.FC<Props> = ({
           '': variant === 'medium',
           'lg:leading-[1.85em]': variant === 'small',
         },
-        className
+        className,
       )}
       style={style}
       {...htmlContentProps}

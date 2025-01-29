@@ -1,14 +1,14 @@
 import cn from 'classnames';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import 'overlayscrollbars/overlayscrollbars.css';
-type ScrollbarProps = {
-  options?: any;
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-  className?: string;
-};
+// type ScrollbarProps = {
+//   options?: any;
+//   children: React.ReactNode;
+//   style?: React.CSSProperties;
+//   className?: string;
+// };
 
-const Scrollbar: React.FC<ScrollbarProps> = ({
+const Scrollbar = ({
   options,
   children,
   style,

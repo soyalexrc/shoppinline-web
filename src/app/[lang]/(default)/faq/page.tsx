@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   title: 'FAQ',
 };
 
-export default async function Page({ params }: { params: any }) {
+type Params = {
+    lang: string
+}
+
+export default async function Page({ params }: { params: Params }) {
   const { lang } = await params;
   return (
     <>
@@ -20,12 +24,7 @@ export default async function Page({ params }: { params: any }) {
       <Container>
         <div className="flex flex-col max-w-2xl py-12 mx-auto 2xl:max-w-4xl md:py-20">
           {faq?.map((item, index) => (
-            <Accordion
-              key={index}
-              item={item}
-              translatorNS="faq"
-              lang={lang}
-            />
+            <Accordion key={index} item={item} translatorNS="faq" lang={lang} />
           ))}
         </div>
       </Container>

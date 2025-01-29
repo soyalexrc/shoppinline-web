@@ -1,7 +1,7 @@
 import Link from '@components/ui/link';
-import cn from "classnames";
+import cn from 'classnames';
 interface Props {
-    className?: string;
+  className?: string;
   href: string;
   btnProps: React.ButtonHTMLAttributes<any>;
   isAuthorized: boolean;
@@ -23,7 +23,7 @@ export default function AuthMenu({
     </Link>
   ) : (
     <button
-        className={cn('text-sm font-normal focus:outline-none ms-2', className)}
+      className={cn('text-sm font-normal focus:outline-none ms-2', className)}
       aria-label="Authentication"
       {...btnProps}
     />

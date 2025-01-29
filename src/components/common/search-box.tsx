@@ -32,6 +32,7 @@ const SearchBox = React.forwardRef<HTMLInputElement, SearchProps>(
     },
     ref,
   ) => {
+      console.log(className);
     const { t } = useTranslation(lang, 'forms');
     return (
       <form
@@ -48,7 +49,7 @@ const SearchBox = React.forwardRef<HTMLInputElement, SearchProps>(
               {
                 'border-2 border-black/10': variant === 'border',
                 'border-0 bg-fill-two': variant === 'fill',
-              }
+              },
             )}
             placeholder={t('placeholder-search') as string}
             aria-label={searchId}

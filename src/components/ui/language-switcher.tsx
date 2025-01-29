@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
     : options[0];
   const [selectedItem, setSelectedItem] = useState(currentSelectedItem);
 
-  function handleItemClick(values: any) {
+  function handleItemClick(values) {
     setSelectedItem(values);
     const pushPathname: string = `/${values.value}/${newPathname}${query}`;
     router.push(pushPathname);

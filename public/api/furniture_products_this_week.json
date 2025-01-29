@@ -9,8 +9,7 @@
       "thumbnail": "/assets/images/products/furniture/furniture_products_1_1.jpg",
       "original": "/assets/images/products/furniture/furniture_products_1_1.jpg"
     },
-    "gallery": [
-    ],
+    "gallery": [],
     "quantity": 0,
     "price": 1200,
     "sale_price": 2000,
@@ -307,7 +306,7 @@
       }
     ],
     "quantity": 170,
-    "price": 1.50,
+    "price": 1.5,
     "sale_price": null,
     "unit": "Common Good",
     "tag": [

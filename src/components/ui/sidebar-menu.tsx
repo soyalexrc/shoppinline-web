@@ -10,7 +10,7 @@ import { useTranslation } from 'src/app/i18n/client';
 import useQueryParam from '@utils/use-query-params';
 import { ROUTES } from '@utils/routes';
 
-function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
+function SidebarMenuItem({ className, item, depth = 0, lang }) {
   const { t } = useTranslation(lang, 'common');
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -19,14 +19,15 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
   const active = searchParams.get('category');
   const isActive =
     active === item.slug ||
-    item?.children?.some((_item: any) => _item.slug === active);
+    item?.children?.some((_item) => _item.slug === active);
   const [isOpen, setOpen] = useState<boolean>(isActive);
   useEffect(() => {
     setOpen(isActive);
   }, [isActive]);
 
   const { slug, name, children: items, icon } = item;
-  
+  console.log(slug);
+
   const { displaySidebar, closeSidebar } = useUI();
 
   function toggleCollapse() {
@@ -36,8 +37,8 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
   const hasQueryKey = searchParams?.get('category');
 
   useEffect(() => {
-        updateQueryparams('category', formState.toString());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+    updateQueryparams('category', formState.toString());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formState]);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
     if (Array.isArray(items) && !!items.length) {
       toggleCollapse();
     } else {
-      displaySidebar && closeSidebar();
+      if (displaySidebar) closeSidebar();
     }
   }
 
@@ -77,11 +78,10 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
         }`}
       >
         <Link
-            href={`/${lang}${ROUTES.SEARCH}`}
-            className={cn(
-            'flex items-center w-full ltr:text-left rtl:text-right outline-none focus:outline-none group focus:ring-0 focus:text-brand-dark'
+          href={`/${lang}${ROUTES.SEARCH}`}
+          className={cn(
+            'flex items-center w-full ltr:text-left rtl:text-right outline-none focus:outline-none group focus:ring-0 focus:text-brand-dark',
           )}
-          
         >
           {icon && (
             <div className="inline-flex shrink-0 2xl:w-12 2xl:h-12 3xl:w-auto 3xl:h-auto">
@@ -111,7 +111,7 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
                   item={currentItem}
                   depth={childDepth}
                   className={cn('text-sm ps-4 py-2 pe-4')}
-                   lang={lang}
+                  lang={lang}
                 />
               );
             })}
@@ -126,15 +126,12 @@ function SidebarMenu({
   lang,
   items,
   className,
-}: {
-  lang: string;
-  items: any;
-  className?: string;
 }) {
   return (
     <ul className={cn(className)}>
-      {items?.map((item: any) => (
+      {items?.map((item) => (
         <SidebarMenuItem
+          className=""
           key={`${item.slug}-key-${item.id}`}
           item={item}
           lang={lang}

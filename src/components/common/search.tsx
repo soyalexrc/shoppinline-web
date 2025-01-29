@@ -3,7 +3,7 @@ import { forwardRef, useState } from 'react';
 import cn from 'classnames';
 import { useSearchQuery } from '@framework/product/use-search';
 import SearchBox from '@components/common/search-box';
-import SearchProduct from '@components/common/search-product';
+import SearchProduct, {SearchProductItem} from '@components/common/search-product';
 import SearchResultLoader from '@components/ui/loaders/search-result-loader';
 import useFreezeBodyScroll from '@utils/use-freeze-body-scroll';
 import Scrollbar from '@components/ui/scrollbar';
@@ -99,37 +99,38 @@ const Search = forwardRef<HTMLDivElement, Props>(
               <Scrollbar className="os-host-flexbox">
                 <div className="w-full max-h-[380px]">
                   {(() => {
+                    if (isLoading) {
+                      return Array.from({ length: 15 }).map((_, idx) => (
+                        <div
+                          key={`search-result-loader-key-${idx}`}
+                          className="py-2.5 ltr:pl-5 rtl:pr-5 ltr:pr-10 rtl:pl-10 scroll-snap-align-start"
+                        >
+                          <SearchResultLoader
+                            key={idx}
+                            uniqueKey={`top-search-${idx}`}
+                          />
+                        </div>
+                      ));
+                    }
+                    // Check if data is empty
+                    if (!data || data.length === 0) {
+                      return (
+                        <div className="text-lg py-20  min-h-60 text-center ">
+                          Not found! Try with another keyword.
+                        </div>
+                      );
+                    }
 
-                        if (isLoading) {
-                            return Array.from({ length: 15 }).map((_, idx) => (
-                                <div
-                                key={`search-result-loader-key-${idx}`}
-                                className="py-2.5 ltr:pl-5 rtl:pr-5 ltr:pr-10 rtl:pl-10 scroll-snap-align-start"
-                                >
-                                <SearchResultLoader
-                                    key={idx}
-                                    uniqueKey={`top-search-${idx}`}
-                                />
-                                </div>
-                            ));
-                        }
-                        // Check if data is empty
-                        if (!data || data.length === 0) {
-                            return <div className="text-lg py-20  min-h-60 text-center ">Not found! Try with another keyword.</div>;
-                        }
-
-                        return data?.map((item: any, index: number) => (
-                            <div
-                            key={`search-result-key-${index}`}
-                            className="py-2.5 ps-5 pe-10 border-b border-black/5 scroll-snap-align-start transition-colors duration-200 hover:bg-fill-four"
-                            onClick={clear}
-                            >
-                            <SearchProduct item={item} key={index} lang={lang} />
-                            </div>
-                        ))
-                        
-                    })()}
-                  
+                    return data?.map((item: SearchProductItem, index: number) => (
+                      <div
+                        key={`search-result-key-${index}`}
+                        className="py-2.5 ps-5 pe-10 border-b border-black/5 scroll-snap-align-start transition-colors duration-200 hover:bg-fill-four"
+                        onClick={clear}
+                      >
+                        <SearchProduct item={item} key={index} lang={lang} />
+                      </div>
+                    ));
+                  })()}
                 </div>
               </Scrollbar>
             </div>

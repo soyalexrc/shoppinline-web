@@ -1,5 +1,5 @@
-type FooterItemProps = {
-  id: string;
+export type FooterItemProps = {
+  id: string | number;
   name: string;
   price: string;
 };

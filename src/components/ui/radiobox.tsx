@@ -21,7 +21,7 @@ export const RadioBox = React.forwardRef<HTMLInputElement, RadioBoxProps>(
         </span>
       </label>
     );
-  }
+  },
 );
 
 RadioBox.displayName = 'RadioBox';

@@ -12,7 +12,6 @@ export default function TermsPageContent({ lang }: { lang: string }) {
       <Container>
         <div className="w-full xl:max-w-[1200px] mx-auto">
           {termsAndServices?.map((item) => (
-            // @ts-ignore
             <div
               key={item.title}
               className="mb-8 lg:mb-12 last:mb-0 order-list-enable"
@@ -23,7 +22,6 @@ export default function TermsPageContent({ lang }: { lang: string }) {
               <div
                 className="space-y-5 text-sm leading-7 text-brand-muted lg:text-15px"
                 dangerouslySetInnerHTML={{
-                  // @ts-ignore
                   __html: t(item.description),
                 }}
               />

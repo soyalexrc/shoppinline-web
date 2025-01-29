@@ -1,4 +1,4 @@
-const TwitterIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const TwitterIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       width="47"

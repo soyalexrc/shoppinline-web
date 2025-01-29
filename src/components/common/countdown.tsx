@@ -5,7 +5,7 @@ type ReactCountdownProps = {
   date: string | number | Date | undefined;
 };
 
-const renderer = ({ hours, minutes, seconds, completed }: any) => {
+const renderer = ({ hours, minutes, seconds, completed }) => {
   if (completed) {
     return null;
   } else {

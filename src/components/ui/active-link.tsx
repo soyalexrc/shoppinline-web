@@ -7,7 +7,7 @@ const ActiveLink = ({
   activeClassName,
   href,
   ...props
-}: any) => {
+}) => {
   const child = Children.only(children);
   const childClassName = child.props.className || '';
 

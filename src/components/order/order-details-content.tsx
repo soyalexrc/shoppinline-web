@@ -1,7 +1,16 @@
 import usePrice from '@framework/product/use-price';
 import Image from '@components/ui/image';
 
-export const OrderDetailsContent: React.FC<{ item?: any }> = ({ item }) => {
+type Item = {
+    price: number;
+    name: string;
+    quantity: number;
+    image: {
+        thumbnail: string
+    }
+}
+
+export const OrderDetailsContent: React.FC<{ item?: Item }> = ({ item }) => {
   const { price } = usePrice({
     amount: item.price,
     currencyCode: 'USD',

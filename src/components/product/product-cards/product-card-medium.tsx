@@ -137,7 +137,6 @@ const ProductCardMedium: React.FC<ProductProps> = ({
             height={180}
           />
         </div>
-        
       </div>
 
       <div className="flex flex-col h-full overflow-hidden relative product-card-content">

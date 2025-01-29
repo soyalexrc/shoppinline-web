@@ -1,6 +1,5 @@
 'use client';
 
-
 import MobileNavigation from '@layouts/mobile-navigation/mobile-navigation';
 import { useIsMounted } from '@utils/use-is-mounted';
 import Footer from '@layouts/home7/footer';
@@ -29,7 +28,7 @@ export default function Home7Layout({
         {children}
       </main>
       <Footer lang={lang} showWidgetServices={false} />
-        <BackToTopButton/>
+      <BackToTopButton />
       <MobileNavigation lang={lang} />
     </div>
   );

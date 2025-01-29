@@ -8,7 +8,6 @@ export const fetchElectronictablesCategory = async ({ queryKey }: any) => {
   return data as Category[];
 };
 export const usePhonesCategoryQuery = (options: QueryOptionsType) => {
- 
   return useQuery<Category[], Error>({
     queryKey: [API_ENDPOINTS.PHONES_CATEGORY, options],
     queryFn: () => fetchElectronictablesCategory(options),

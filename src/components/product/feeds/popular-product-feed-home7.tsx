@@ -11,24 +11,24 @@ interface ProductFeedProps {
   variant?: string;
 }
 const carouselBreakpoint = {
-    '1536': {
-        slidesPerView: 7,
-    },
-    '1280': {
-        slidesPerView: 5,
-    },
-    '1024': {
-        slidesPerView: 4,
-    },
-    '640': {
-        slidesPerView: 3,
-    },
-    '360': {
-        slidesPerView: 2,
-    },
-    '0': {
-        slidesPerView: 1,
-    },
+  '1536': {
+    slidesPerView: 7,
+  },
+  '1280': {
+    slidesPerView: 5,
+  },
+  '1024': {
+    slidesPerView: 4,
+  },
+  '640': {
+    slidesPerView: 3,
+  },
+  '360': {
+    slidesPerView: 2,
+  },
+  '0': {
+    slidesPerView: 1,
+  },
 };
 
 const PopularProductFeedHome7: FC<ProductFeedProps> = ({

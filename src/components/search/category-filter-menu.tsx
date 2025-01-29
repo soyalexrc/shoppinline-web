@@ -8,7 +8,7 @@ import { useTranslation } from 'src/app/i18n/client';
 import { FaCheck } from 'react-icons/fa';
 import useQueryParam from '@utils/use-query-params';
 
-function checkIsActive(arr: any, item: string) {
+function checkIsActive(arr, item: string) {
   if (arr.includes(item)) {
     return true;
   }
@@ -19,7 +19,7 @@ function CategoryFilterMenuItem({
   item,
   depth = 0,
   lang,
-}: any) {
+}) {
   const { t } = useTranslation(lang, 'common');
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -28,9 +28,9 @@ function CategoryFilterMenuItem({
 
   const isActive =
     checkIsActive(formState, item.slug) ||
-    item?.children?.some((_item: any) => checkIsActive(formState, _item.slug));
+    item?.children?.some((_item) => checkIsActive(formState, _item.slug));
   const [isOpen, setOpen] = useState<boolean>(isActive);
-  const [subItemAction, setSubItemAction] = useState<boolean>(false);
+  // const [subItemAction, setSubItemAction] = useState<boolean>(false);
   useEffect(() => {
     setOpen(isActive);
   }, [isActive]);
@@ -40,9 +40,9 @@ function CategoryFilterMenuItem({
   function toggleCollapse() {
     setOpen((prevValue) => !prevValue);
   }
-  const handleChange = () => {
-    setSubItemAction(!subItemAction);
-  };
+  // const handleChange = () => {
+  //   setSubItemAction(!subItemAction);
+  // };
 
   const hasQueryKey = searchParams?.get('category');
 
@@ -66,7 +66,7 @@ function CategoryFilterMenuItem({
           : [...formState, slug],
       );
 
-      displaySidebar && closeSidebar();
+      if (displaySidebar) closeSidebar();
     }
   }
 
@@ -86,13 +86,13 @@ function CategoryFilterMenuItem({
         className={cn(
           'flex justify-between items-center transition text-sm ',
           { 'text-brand': isOpen },
-          className
+          className,
         )}
       >
         <button
           className={cn(
             'text-brand-dark  hover:text-brand font-medium flex items-center w-full ltr:text-left rtl:text-right cursor-pointer group gap-2',
-            { 'py-2': depth > 0 }
+            { 'py-2': depth > 0 },
           )}
           // onClick={handleChange}
         >
@@ -107,12 +107,12 @@ function CategoryFilterMenuItem({
             </div>
           )}
           {depth > 0 && (
-              <span
-                  className={`w-[20px] h-[20px] text-[11px] flex items-center justify-center border-2 border-border-four rounded-full transition duration-500 ease-in-out group-hover:border-yellow-100 text-brand-light ${
-                      formState.includes(item.slug) &&
-                      'border-yellow-100 bg-yellow-100'
-                  }`}
-              >
+            <span
+              className={`w-[20px] h-[20px] text-[11px] flex items-center justify-center border-2 border-border-four rounded-full transition duration-500 ease-in-out group-hover:border-yellow-100 text-brand-light ${
+                formState.includes(item.slug) &&
+                'border-yellow-100 bg-yellow-100'
+              }`}
+            >
               {formState.includes(item.slug) && <FaCheck />}
             </span>
           )}
@@ -126,7 +126,7 @@ function CategoryFilterMenuItem({
       {Array.isArray(items) && isOpen ? (
         <li>
           <ul key="content" className="text-xs pb-4">
-            {items?.map((currentItem: any) => {
+            {items?.map((currentItem) => {
               const childDepth = depth + 1;
               return (
                 <CategoryFilterMenuItem
@@ -145,10 +145,10 @@ function CategoryFilterMenuItem({
   );
 }
 
-function CategoryFilterMenu({ items, className, lang }: any) {
+function CategoryFilterMenu({ items, className, lang }) {
   return (
     <ul className={cn(className)}>
-      {items?.map((item: any) => (
+      {items?.map((item) => (
         <CategoryFilterMenuItem
           key={`${item.slug}-key-${item.id}`}
           item={item}

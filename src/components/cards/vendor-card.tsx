@@ -5,9 +5,18 @@ import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import { useTranslation } from 'src/app/i18n/client';
 
+type Shop = {
+  name: string,
+  slug: string;
+  address: string;
+    logo: {
+        thumbnail: string;
+    }
+}
+
 type VendorCardProps = {
   lang: string;
-  shop?: any;
+  shop?: Shop;
 };
 
 const VendorCard: React.FC<VendorCardProps> = ({ lang, shop }) => {

@@ -2,12 +2,12 @@ import Scrollbar from '@components/ui/scrollbar';
 import { useUI } from '@contexts/ui.context';
 import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import { getDirection } from '@utils/get-direction';
-import ShopSidebar from '@components/shops/shop-sidebar';
+import ShopSidebar, {ShopSidebarItem} from '@components/shops/shop-sidebar';
 import { useTranslation } from 'src/app/i18n/client';
 
 interface Props {
   lang: string;
-  data: any;
+  data: ShopSidebarItem;
 }
 
 const ShopSidebarDrawer: React.FC<Props> = ({ data, lang }) => {

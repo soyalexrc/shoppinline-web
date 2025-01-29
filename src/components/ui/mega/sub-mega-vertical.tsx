@@ -1,17 +1,18 @@
 import { useTranslation } from 'src/app/i18n/client';
-import { useRouter } from 'next/router';
-import ListMenu from '@components/ui/mega/mega-menu';
-import Container from '@components/ui/container';
-import Image from '@components/ui/image';
-import { productPlaceholder } from '@assets/placeholders';
+// import { useRouter } from 'next/router';
+// import ListMenu from '@components/ui/mega/mega-menu';
+// import Container from '@components/ui/container';
+// import Image from '@components/ui/image';
+// import { productPlaceholder } from '@assets/placeholders';
 import Link from '@components/ui/link';
 import cn from 'classnames';
 import { ROUTES } from '@utils/routes';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+// import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
-  const { t } = useTranslation(lang, 'common');
+function SidebarMenuItem({ className, item, depth = 0, lang }) {
+  // const { t } = useTranslation(lang, 'common');
   const { name, children: items, icon, type } = item;
+  console.log(icon, type)
 
   return (
     <>
@@ -42,7 +43,7 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
                     depth={childDepth}
                     lang={lang}
                     className={cn(
-                      'text-sm text-skin-base hover:text-skin-primary'
+                      'text-sm text-skin-base hover:text-skin-primary',
                     )}
                   />
                 );
@@ -55,8 +56,8 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
   );
 }
 
-const SubMegaVertical = ({ items, lang }: any) => {
-  const { t } = useTranslation('menu');
+const SubMegaVertical = ({ items, lang }) => {
+  // const { t } = useTranslation('menu');
   const depth = 0;
   return (
     <div className="dropdownMenu hidden md:block absolute z-10 left-full top-0 w-[800px] bg-skin-fill opacity-0 invisible shadow-navigation">
@@ -64,7 +65,7 @@ const SubMegaVertical = ({ items, lang }: any) => {
         key="content"
         className="text-xs pl-7 px-5 py-4 grid grid-cols-3 gap-4"
       >
-        {items?.map((currentItem: { name: any; slug: any }) => {
+        {items?.map((currentItem: { name; slug }) => {
           const childDepth = depth + 1;
           return (
             <SidebarMenuItem

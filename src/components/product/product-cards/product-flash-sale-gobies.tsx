@@ -7,7 +7,7 @@ import Countdown, { zeroPad } from 'react-countdown';
 import { productPlaceholder } from '@assets/placeholders';
 import ProgressCard from '@components/ui/progress-card';
 import { useTranslation } from 'src/app/i18n/client';
-import StarIcon from "@components/icons/star-icon";
+import StarIcon from '@components/icons/star-icon';
 
 interface ProductProps {
   product: Product;
@@ -26,14 +26,12 @@ const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
           <span className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-red-600 text-brand-light rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
             {zeroPad(days)}
           </span>
-        
         </span>
         <span className="mt-1">:</span>
         <span>
           <span className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-red-600 text-brand-light rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
             {zeroPad(hours)}
           </span>
-         
         </span>
         <span className="mt-1">:</span>
         <span>
@@ -46,7 +44,6 @@ const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
           <span className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-red-600 text-brand-light rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
             {zeroPad(seconds)}
           </span>
-          
         </span>
       </span>
     );
@@ -90,8 +87,8 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
     >
       <div className="absolute z-10 top-6 left">
         <span className="text-[10px] font-medium text-white uppercase inline-block bg-red-600 rounded-sm px-2.5 pt-1 pb-[3px] ">
-                {t('text-on-sale')}
-              </span>
+          {t('text-on-sale')}
+        </span>
       </div>
       <figure className="relative flex items-center justify-center flex-grow w-full  px-16 m-0 mx-auto xl:h-56 2xl:h-80">
         <Image
@@ -104,21 +101,21 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
       </figure>
 
       <div className="flex flex-col mt-8 mb-0.5 ">
-          <h2 className="mb-2 text-skin-base font-semibold text-sm leading-5 lg:text-15px sm:leading-6">
-              {name}
-          </h2>
-          <div className="flex text-gray-500 space-x-2">
-              <div className="flex items-center">
-                  {[...Array(5)].map((_, idx) => (
-                      <StarIcon
-                          key={idx}
-                          color={idx < 5 ? '#F3B81F' : '#DFE6ED'}
-                          className="w-3 h-3 mx-px"
-                      />
-                  ))}
-              </div>
-              <span className="text-[13px] leading-4">(1 review)</span>
+        <h2 className="mb-2 text-skin-base font-semibold text-sm leading-5 lg:text-15px sm:leading-6">
+          {name}
+        </h2>
+        <div className="flex text-gray-500 space-x-2">
+          <div className="flex items-center">
+            {[...Array(5)].map((_, idx) => (
+              <StarIcon
+                key={idx}
+                color={idx < 5 ? '#F3B81F' : '#DFE6ED'}
+                className="w-3 h-3 mx-px"
+              />
+            ))}
           </div>
+          <span className="text-[13px] leading-4">(1 review)</span>
+        </div>
         <div className="mb-2 lg:mb-3">
           <span className="inline-block mx-1 text-xl font-semibold  text-brand">
             {product_type === 'variable' ? `${minPrice} - ${maxPrice}` : price}
@@ -129,7 +126,7 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
             </del>
           )}
         </div>
-        
+
         <Countdown date={date} intervalDelay={1000} renderer={renderer} />
         <ProgressCard
           soldProduct={sold}

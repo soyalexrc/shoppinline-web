@@ -14,41 +14,41 @@ import { useRouter } from 'next/navigation';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import ImageLightBox from '@components/ui/image-lightbox';
 
-interface Props {
-  gallery: any[];
-  thumbnailClassName?: string;
-  galleryClassName?: string;
-  lang: string;
-}
+// interface Props {
+//   gallery: any[];
+//   thumbnailClassName?: string;
+//   galleryClassName?: string;
+//   lang: string;
+// }
 
 // product gallery breakpoints
-const galleryCarouselBreakpoints = {
-  1280: {
-    slidesPerView: 4,
-    direction: 'vertical',
-  },
-  767: {
-    slidesPerView: 4,
-    direction: 'horizontal',
-  },
-  0: {
-    slidesPerView: 3,
-    direction: 'horizontal',
-  },
-};
+// const galleryCarouselBreakpoints = {
+//   1280: {
+//     slidesPerView: 4,
+//     direction: 'vertical',
+//   },
+//   767: {
+//     slidesPerView: 4,
+//     direction: 'horizontal',
+//   },
+//   0: {
+//     slidesPerView: 3,
+//     direction: 'horizontal',
+//   },
+// };
 
 const swiperParams: SwiperOptions = {
   slidesPerView: 1,
   spaceBetween: 0,
 };
 
-const ThumbnailCarousel: React.FC<Props> = ({
+const ThumbnailCarousel = ({
   gallery,
   thumbnailClassName = 'xl:w-[500px]',
   galleryClassName = 'xl:w-[100px] 2xl:w-[120px]',
   lang,
 }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   const dir = getDirection(lang);
@@ -59,7 +59,7 @@ const ThumbnailCarousel: React.FC<Props> = ({
       <div
         className={cn(
           'w-full xl:ltr:ml-5 xl:rtl:mr-5  overflow-hidden rounded-md relative',
-          thumbnailClassName
+          thumbnailClassName,
         )}
       >
         <Swiper
@@ -75,7 +75,7 @@ const ThumbnailCarousel: React.FC<Props> = ({
           }}
           {...swiperParams}
         >
-          {gallery?.map((item: any) => (
+          {gallery?.map((item) => (
             <SwiperSlide
               key={`product-gallery-${item.id}`}
               className="flex items-center justify-center"
@@ -86,7 +86,6 @@ const ThumbnailCarousel: React.FC<Props> = ({
                 width={650}
                 height={590}
                 className="mx-auto rounded-lg"
-
               />
             </SwiperSlide>
           ))}
@@ -131,7 +130,7 @@ const ThumbnailCarousel: React.FC<Props> = ({
             },
           }}
         >
-          {gallery?.map((item: any) => (
+          {gallery?.map((item) => (
             <SwiperSlide
               key={`product-thumb-gallery-${item.id}`}
               className="flex items-center justify-center cursor-pointer rounded overflow-hidden border border-border-base transition hover:opacity-75"

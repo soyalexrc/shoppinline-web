@@ -1,13 +1,13 @@
 'use client';
 
-import BannerCard from '@components/cards/banner-card';
+import BannerCard, {Banner} from '@components/cards/banner-card';
 import useWindowSize from '@utils/use-window-size';
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from '@components/ui/carousel/slider';
 
 interface BannerProps {
   lang: string;
-  data: any;
+  data: Banner[];
   className?: string;
   girdClassName?: string;
 }
@@ -27,7 +27,7 @@ const BannerHeroGrid: React.FC<BannerProps> = ({
           nextActivateId="banner-carousel-button-next"
           lang={lang}
         >
-          {data?.map((banner: any) => (
+          {data?.map((banner) => (
             <SwiperSlide key={`banner-key-${banner.id}`}>
               <BannerCard banner={banner} effectActive={true} lang={lang} />
             </SwiperSlide>
@@ -37,7 +37,7 @@ const BannerHeroGrid: React.FC<BannerProps> = ({
         <div
           className={`grid gap-4 2xl:gap-5 3xl:gap-7 grid-cols-12 ${girdClassName}`}
         >
-          {data?.map((banner: any) => (
+          {data?.map((banner) => (
             <BannerCard
               key={`banner--key${banner.id}`}
               banner={banner}

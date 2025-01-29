@@ -7,7 +7,7 @@ function removeEmpty(obj: any): any {
     );
 }
 
-export function formatAddress(address: any) {
+export function formatAddress(address: string) {
   let formattedAddress = {};
   if (address) {
     formattedAddress = removeEmpty(address);

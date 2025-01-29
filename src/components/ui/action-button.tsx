@@ -8,12 +8,12 @@ import {
 import { Fragment } from 'react';
 import { useUI } from '@contexts/ui.context';
 
-const ActionsButton: React.FC<{ item?: any }> = ({ item }) => {
+const ActionsButton: React.FC<{ item: unknown }> = ({ item }) => {
   const { openDrawer, setDrawerView } = useUI();
 
-  function handleCartOpen(item: any) {
+  function handleCartOpen(action: unknown) {
     setDrawerView('ORDER_DETAILS');
-    return openDrawer(item);
+    return openDrawer(action);
   }
 
   return (

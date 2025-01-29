@@ -7,12 +7,12 @@ import { IoChevronForward } from 'react-icons/io5';
 import { IoHomeOutline } from 'react-icons/io5';
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'src/app/i18n/client';
+//
+// interface Props {
+//   children: any;
+// }
 
-interface Props {
-  children: any;
-}
-
-const BreadcrumbItem: React.FC<Props> = ({ children, ...props }) => {
+const BreadcrumbItem= ({ children, ...props }) => {
   return (
     <li
       className="text-sm text-brand-muted px-2.5 transition duration-200 ease-in ltr:first:pl-0 rtl:first:pr-0 ltr:last:pr-0 rtl:last:pl-0 hover:text-brand-dark"
@@ -23,7 +23,7 @@ const BreadcrumbItem: React.FC<Props> = ({ children, ...props }) => {
   );
 };
 
-const BreadcrumbSeparator: React.FC<Props> = ({ children, ...props }) => {
+const BreadcrumbSeparator = ({ children, ...props }) => {
   return (
     <li className="text-base text-brand-dark" {...props}>
       {children}
@@ -31,8 +31,8 @@ const BreadcrumbSeparator: React.FC<Props> = ({ children, ...props }) => {
   );
 };
 
-export const BreadcrumbItems = (props: any) => {
-  let children: any = React.Children.toArray(props.children);
+export const BreadcrumbItems = (props) => {
+  let children: React.ReactNode[] = React.Children.toArray(props.children);
 
   children = children.map((child: string, index: number) => (
     <BreadcrumbItem key={`breadcrumb_item${index}`}>{child}</BreadcrumbItem>
@@ -40,7 +40,7 @@ export const BreadcrumbItems = (props: any) => {
 
   const lastIndex = children.length - 1;
 
-  children = children.reduce((acc: any, child: string, index: number) => {
+  children = children.reduce<React.ReactNode[]>((acc, child, index) => {
     const notLast = index < lastIndex;
     if (notLast) {
       acc.push(
@@ -57,7 +57,9 @@ export const BreadcrumbItems = (props: any) => {
 
   return (
     <div className="flex items-center ">
-      <ol className="flex items-center flex-wrap w-full overflow-hidden">{children}</ol>
+      <ol className="flex items-center flex-wrap w-full overflow-hidden">
+        {children}
+      </ol>
     </div>
   );
 };
@@ -84,9 +86,9 @@ const Breadcrumb: React.FC<{ separator?: string; lang: string }> = ({
         </a>
       </ActiveLink>
 
-      {breadcrumbs?.map((breadcrumb: any) => (
+      {breadcrumbs?.map((breadcrumb) => (
         <ActiveLink
-           href={`/${lang}${breadcrumb.href}`}
+          href={`/${lang}${breadcrumb.href}`}
           activeClassName="text-heading"
           key={breadcrumb.href}
           legacyBehavior

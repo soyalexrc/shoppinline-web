@@ -9,7 +9,7 @@ export const fetchElectronictablesCategory = async ({ queryKey }: any) => {
 };
 export const useComputerCategoryQuery = (options: QueryOptionsType) => {
   return useQuery<Category[], Error>({
-      queryKey: [API_ENDPOINTS.COMPUTER_CATEGORY, options],
-      queryFn: () => fetchElectronictablesCategory(options),
-});
+    queryKey: [API_ENDPOINTS.COMPUTER_CATEGORY, options],
+    queryFn: () => fetchElectronictablesCategory(options),
+  });
 };

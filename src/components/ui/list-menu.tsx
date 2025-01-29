@@ -1,11 +1,11 @@
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import Link from '@components/ui/link';
 import { useTranslation } from 'src/app/i18n/client';
-import {getDirection} from "@utils/get-direction";
+import { getDirection } from '@utils/get-direction';
 
 const ListMenu = ({ lang, dept, data, hasSubMenu, menuIndex }: any) => {
   const { t } = useTranslation(lang, 'menu');
-    const dir = getDirection(lang);
+  const dir = getDirection(lang);
   return (
     <li className="relative">
       <Link
@@ -14,9 +14,12 @@ const ListMenu = ({ lang, dept, data, hasSubMenu, menuIndex }: any) => {
       >
         {t(data.label)}
         {data.subMenu && (
-            <span className="text-sm mt-0.5 shrink-0">
-              {dir === 'rtl' ? <IoIosArrowBack className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />
-                  : <IoIosArrowForward className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />}
+          <span className="text-sm mt-0.5 shrink-0">
+            {dir === 'rtl' ? (
+              <IoIosArrowBack className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />
+            ) : (
+              <IoIosArrowForward className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />
+            )}
           </span>
         )}
       </Link>
@@ -32,11 +35,11 @@ const ListMenu = ({ lang, dept, data, hasSubMenu, menuIndex }: any) => {
   );
 };
 
-const SubMenu: React.FC<any> = ({ lang, dept, data, menuIndex }) => {
+const SubMenu = ({ lang, dept, data, menuIndex }) => {
   dept = dept + 1;
   return (
     <ul className="absolute z-0 invisible w-56 py-3 transition-all duration-300 opacity-0 subMenuChild shadow-subMenu bg-brand-light ltr:right-full rtl:left-full 2xl:ltr:right-auto 2xl:rtl:left-auto 2xl:ltr:left-full 2xl:rtl:right-full top-4">
-      {data?.map((menu: any, index: number) => {
+      {data?.map((menu, index: number) => {
         const menuName: string = `sidebar-submenu-${dept}-${menuIndex}-${index}`;
         return (
           <ListMenu

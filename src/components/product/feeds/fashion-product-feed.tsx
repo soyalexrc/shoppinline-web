@@ -2,21 +2,21 @@
 import ProductsCarousel from '@components/product/products-carousel';
 import { ROUTES } from '@utils/routes';
 import { LIMITS } from '@framework/utils/limits';
-import {FC} from "react";
-import {usefashionProductsQuery} from "@framework/product/get-all-fashion-products";
+import { FC } from 'react';
+import { usefashionProductsQuery } from '@framework/product/get-all-fashion-products';
 
 interface Props {
-    lang: string;
-    className: string;
-    variant: string;
+  lang: string;
+  className: string;
+  variant: string;
 }
 
-const FashionProductFeed: FC<Props> = ({
-     lang,
-     className,
-     variant,
- }) => {
-  const { data: Products=[], isLoading, error } = usefashionProductsQuery({
+const FashionProductFeed: FC<Props> = ({ lang, className, variant }) => {
+  const {
+    data: Products = [],
+    isLoading,
+    error,
+  } = usefashionProductsQuery({
     limit: LIMITS.ELETRONIC_PRODUCTS_LIMITS,
   });
   return (
@@ -32,5 +32,5 @@ const FashionProductFeed: FC<Props> = ({
       className={className}
     />
   );
-}
+};
 export default FashionProductFeed;

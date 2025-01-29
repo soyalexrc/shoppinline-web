@@ -2,12 +2,11 @@
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from '@components/ui/carousel/slider';
 import SectionHeader from '@components/common/section-header';
-import ProductCard from "@components/product/product-cards/product-card";
+import ProductCard from '@components/product/product-cards/product-card';
 import ProductCardLoader from '@components/ui/loaders/product-card-loader';
 import { Product } from '@framework/types';
 import Alert from '@components/ui/alert';
 import useWindowSize from '@utils/use-window-size';
-
 
 interface ProductsProps {
   sectionHeading: string;
@@ -26,24 +25,24 @@ interface ProductsProps {
   lang: string;
 }
 const breakpoints = {
-    '1536': {
-        slidesPerView: 6,
-    },
-    '1280': {
-        slidesPerView: 5,
-    },
-    '1024': {
-        slidesPerView: 4,
-    },
-    '640': {
-        slidesPerView: 3,
-    },
-    '360': {
-        slidesPerView: 2,
-    },
-    '0': {
-        slidesPerView: 1,
-    },
+  '1536': {
+    slidesPerView: 6,
+  },
+  '1280': {
+    slidesPerView: 5,
+  },
+  '1024': {
+    slidesPerView: 4,
+  },
+  '640': {
+    slidesPerView: 3,
+  },
+  '360': {
+    slidesPerView: 2,
+  },
+  '0': {
+    slidesPerView: 1,
+  },
 };
 
 const ProductsGridCarousel: React.FC<ProductsProps> = ({
@@ -58,11 +57,11 @@ const ProductsGridCarousel: React.FC<ProductsProps> = ({
   variant = 'alpine',
   borderCarousel,
   carouselBreakpoint,
-  rowCarousel= 1,
+  rowCarousel = 1,
   lang,
 }) => {
-    const { width } = useWindowSize();
-    if(width!  < 767 ) limit = 4;
+  const { width } = useWindowSize();
+  if (width! < 767) limit = 4;
   return (
     <div className={`${className}`}>
       <SectionHeader sectionHeading={sectionHeading} lang={lang} />

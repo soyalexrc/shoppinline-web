@@ -4,28 +4,43 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { Description, Label, Radio, RadioGroup } from '@headlessui/react';
 import { useModalAction } from '@components/common/modal/modal.context';
 import { useTranslation } from 'src/app/i18n/client';
+import {IoMdClose} from "react-icons/io";
 
-const ContactBox: React.FC<{ items?: any; lang: string }> = ({
+type ItemsData = {
+  title: string;
+  number: number;
+  id: number;
+}
+
+type Props = {
+  items: {
+   data: ItemsData[]
+  };
+  lang: string
+}
+
+const ContactBox: React.FC<Props> = ({
   items: { data },
   lang,
 }) => {
   const { t } = useTranslation(lang, 'common');
-  let [contactData, setContactData] = useState(data);
+  const [contactData, setContactData] = useState(data);
   const { openModal } = useModalAction();
 
-  function handlePopupView(item: any) {
+  function handlePopupView(item: unknown) {
     openModal('PHONE_NUMBER', item);
   }
 
-  const removeItem = (id: any, title: string) => {
-    var result = confirm(`Want to delete? ${title} Contact`);
+  const removeItem = (id: number, title: string) => {
+    const result = confirm(`Want to delete? ${title} Contact`);
     if (result) {
-      let items = [...contactData];
-      let array = items.filter((item: any) => item.id !== id);
+      const items = [...contactData];
+      const array = items.filter((item: ItemsData) => item.id !== id);
       setContactData(array);
     }
   };
   const [selected, setSelected] = useState(data[0]);
+
   return (
     <>
       <div className="text-[15px] text-brand-dark ">
@@ -35,7 +50,7 @@ const ContactBox: React.FC<{ items?: any; lang: string }> = ({
           className="grid grid-cols-1 gap-5 md:grid-cols-2 auto-rows-auto"
         >
           <Label className="sr-only">{t('text-default')}</Label>
-          {contactData?.map((item: any, index: any) => (
+          {contactData?.map((item, index: number) => (
             <Radio
               key={index}
               value={item}
@@ -57,12 +72,12 @@ const ContactBox: React.FC<{ items?: any; lang: string }> = ({
                 >
                   <TiPencil />
                 </button>
-                {/* <button
+                <button
                   className="flex justify-center items-center bg-[#F35C5C] h-5 w-5 rounded-full"
                   onClick={() => removeItem(item?.id, item?.title)}
                 >
                   <IoMdClose size={12} fill={'#fff'} />
-                </button> */}
+                </button>
               </div>
             </Radio>
           ))}
@@ -81,17 +96,17 @@ const ContactBox: React.FC<{ items?: any; lang: string }> = ({
 
 export default ContactBox;
 
-function CheckIcon(props: any) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <circle cx={12} cy={12} r={12} fill="#fff" opacity="0.2" />
-      <path
-        d="M7 13l3 3 7-7"
-        stroke="#fff"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+// function CheckIcon(props: any) {
+//   return (
+//     <svg viewBox="0 0 24 24" fill="none" {...props}>
+//       <circle cx={12} cy={12} r={12} fill="#fff" opacity="0.2" />
+//       <path
+//         d="M7 13l3 3 7-7"
+//         stroke="#fff"
+//         strokeWidth={1.5}
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       />
+//     </svg>
+//   );
+// }

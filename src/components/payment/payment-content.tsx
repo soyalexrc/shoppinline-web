@@ -4,22 +4,33 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { Description, Label, Radio, RadioGroup } from '@headlessui/react';
 import { useModalAction } from '@components/common/modal/modal.context';
 
-const PaymentBox: React.FC<{ items: any }> = ({ items }) => {
+type Item = {
+    id: number;
+    title: string;
+    card: {
+        number: string;
+        name: string;
+        address_zip: string;
+    };
+}
+
+const PaymentBox: React.FC<{ items: Item[] }> = ({ items }) => {
   const { openModal } = useModalAction();
 
-  function handlePopupView(item: any) {
+  function handlePopupView() {
     openModal('PAYMENT');
   }
 
-  const removeItem = (id: any, title: string) => {
-    var result = confirm(`Want to delete? ${title} Payment Card ?`);
+  const removeItem = (id: number, title: string) => {
+    const result = confirm(`Want to delete? ${title} Payment Card ?`);
+    console.log(result, id)
   };
   const [selected, setSelected] = useState(items[0]);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-auto text-[15px] text-black">
       <RadioGroup value={selected} onChange={setSelected}>
         <Label className="sr-only">Default</Label>
-        {items?.map((item: any, index: any) => (
+        {items?.map((item, index: number) => (
           <Radio
             key={index}
             value={item}

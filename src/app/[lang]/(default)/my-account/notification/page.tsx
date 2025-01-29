@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Notification',
 };
 
-export default async function Notification({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
   const { lang } = await params;
   return <Notifications lang={lang} />;
 }

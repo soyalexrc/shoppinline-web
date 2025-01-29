@@ -7,14 +7,18 @@ export const metadata: Metadata = {
   title: 'Terms',
 };
 
-export default async function Page({ params }: { params: any }) {
-  const { lang } = await params;
+type Params = {
+    lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+ const { lang } = await params;
   return (
     <>
       <PageHeroSection heroTitle="text-page-terms-condition" lang={lang} />
       <div className="py-12 lg:py-16">
         <Container>
-            <TermsPageContent lang={lang} />
+          <TermsPageContent lang={lang} />
         </Container>
       </div>
     </>

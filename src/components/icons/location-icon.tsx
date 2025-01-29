@@ -1,4 +1,4 @@
-const LocationIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const LocationIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       width="18"

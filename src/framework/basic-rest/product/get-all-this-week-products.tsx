@@ -10,7 +10,7 @@ export const fetchThisWeekProducts = async ({ queryKey }: any) => {
 
 export const useThisWeekProductsQuery = (options: QueryOptionsType) => {
   return useQuery<Product[], Error>({
-        queryKey: [API_ENDPOINTS.THIS_WEEK_PRODUCTS, options],
-        queryFn: () =>   fetchThisWeekProducts(options),
-    });
+    queryKey: [API_ENDPOINTS.THIS_WEEK_PRODUCTS, options],
+    queryFn: () => fetchThisWeekProducts(options),
+  });
 };

@@ -23,19 +23,19 @@ export default function ProductWishlistGrid({
         <Alert message={error?.message} />
       ) : (
         <div className="flex flex-col">
-          {isLoading
-            ? (
-              <div className="flex justify-center items-center min-h-[300px] bg-white">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
-              </div>
-            )
-            : data?.map((product: any) => (
-                <WishlistProductCard
-                  key={`product--key${product.id}`}
-                  product={product}
-                  lang={lang}
-                />
-              ))}
+          {isLoading ? (
+            <div className="flex justify-center items-center min-h-[300px] bg-white">
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
+            </div>
+          ) : (
+            data?.map((product: any) => (
+              <WishlistProductCard
+                key={`product--key${product.id}`}
+                product={product}
+                lang={lang}
+              />
+            ))
+          )}
         </div>
       )}
     </div>

@@ -1,4 +1,4 @@
-const FacebookIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const FacebookIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       width="47"

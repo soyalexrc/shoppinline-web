@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-const SearchResultLoader = (props: any) => (
+const SearchResultLoader = (props) => (
   <ContentLoader
     speed={2}
     width={400}

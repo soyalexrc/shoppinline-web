@@ -2,22 +2,22 @@
 import ProductsCarousel from '@components/product/products-carousel';
 import { ROUTES } from '@utils/routes';
 import { LIMITS } from '@framework/utils/limits';
-import {useElectronicProductsQuery} from "@framework/product/get-all-electronic-products";
-import {FC} from "react";
-import {Product} from '@framework/types';
+import { useElectronicProductsQuery } from '@framework/product/get-all-electronic-products';
+import { FC } from 'react';
+import { Product } from '@framework/types';
 
 interface Props {
-    lang: string;
-    className: string;
-    variant?: string;
+  lang: string;
+  className: string;
+  variant?: string;
 }
 
-const ElectronicProductFeed: FC<Props> = ({
-     lang,
-     className,
-     variant,
- }) => {
-  const { data: Product=[], isLoading, error } = useElectronicProductsQuery({
+const ElectronicProductFeed: FC<Props> = ({ lang, className, variant }) => {
+  const {
+    data: Product = [],
+    isLoading,
+    error,
+  } = useElectronicProductsQuery({
     limit: LIMITS.ELETRONIC_PRODUCTS_LIMITS,
   });
   return (
@@ -33,5 +33,5 @@ const ElectronicProductFeed: FC<Props> = ({
       className={className}
     />
   );
-}
+};
 export default ElectronicProductFeed;

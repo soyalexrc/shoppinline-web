@@ -7,7 +7,7 @@ import { useTranslation } from 'src/app/i18n/client';
 
 const DeliveryAddresses: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');
-  let { data, isLoading } = useAddressQuery();
+  const { data, isLoading } = useAddressQuery();
   const { closeModal } = useModalAction();
   if (isLoading) {
     return <div>Loading...</div>;

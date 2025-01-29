@@ -31,7 +31,7 @@ const ProductAttributes: React.FC<Props> = ({
                   {
                     'border-brand text-brand':
                       attributes[variationName] === attribute.value,
-                  }
+                  },
                 )}
                 onClick={() =>
                   setAttributes((prev: any) => ({

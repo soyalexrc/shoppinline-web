@@ -20,7 +20,6 @@ export default function PrivacyPageContent({ lang }: { lang: string }) {
             <ol className="sticky z-10 md:top-16 lg:top-20">
               {privacyPolicy?.map((item, index) => (
                 <li key={index}>
-                  {/* @ts-ignore */}
                   <Link
                     spy={true}
                     offset={-120}
@@ -40,8 +39,8 @@ export default function PrivacyPageContent({ lang }: { lang: string }) {
 
           <div className="md:w-9/12 md:ltr:pl-8 md:rtl:pr-8">
             {privacyPolicy?.map((item) => (
-              // @ts-ignore
               <Element
+                name={makeTitleToDOMId(t(item.title))}
                 key={item.title}
                 id={makeTitleToDOMId(t(item.title))}
                 className="mb-8 lg:mb-12 last:mb-0 order-list-enable"
@@ -52,7 +51,6 @@ export default function PrivacyPageContent({ lang }: { lang: string }) {
                 <div
                   className="space-y-5 text-sm leading-7 text-brand-muted lg:text-15px"
                   dangerouslySetInnerHTML={{
-                    // @ts-ignore
                     __html: t(item.description),
                   }}
                 />

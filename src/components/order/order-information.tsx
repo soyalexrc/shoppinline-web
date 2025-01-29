@@ -1,7 +1,7 @@
 import { IoCheckmarkCircle } from 'react-icons/io5';
 import OrderDetails from '@components/order/order-details';
 import { useOrderQuery } from '@framework/order/get-order';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import usePrice from '@framework/product/use-price';
 import { useTranslation } from 'src/app/i18n/client';
 

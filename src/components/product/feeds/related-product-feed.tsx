@@ -3,7 +3,7 @@
 import ProductsCarousel from '@components/product/products-carousel';
 import { useRelatedProductsQuery } from '@framework/product/get-related-product';
 import { LIMITS } from '@framework/utils/limits';
-import {Product} from '@framework/types';
+import { Product } from '@framework/types';
 
 interface RelatedProductsProps {
   lang: string;
@@ -18,7 +18,11 @@ const RelatedProductFeed: React.FC<RelatedProductsProps> = ({
   className,
   uniqueKey = 'related-product-popup',
 }) => {
-  const { data: Product=[], isLoading, error } = useRelatedProductsQuery({
+  const {
+    data: Product = [],
+    isLoading,
+    error,
+  } = useRelatedProductsQuery({
     limit: LIMITS.RELATED_PRODUCTS_LIMITS,
   });
   return (

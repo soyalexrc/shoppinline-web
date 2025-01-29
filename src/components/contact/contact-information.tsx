@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import {FC, JSX} from 'react';
 import LocationIcon from '@components/icons/contact/location-icon';
 import PhoneIcon from '@components/icons/contact/phone-icon';
 import MailIcon from '@components/icons/contact/mail-icon';
@@ -8,7 +8,9 @@ import Text from '@components/ui/text';
 import Heading from '@components/ui/heading';
 import { useTranslation } from 'src/app/i18n/client';
 
-const data = [
+type ItemData = { id: number; slug: string; icon: JSX.Element; name: string; description: string }
+
+const data: ItemData[] = [
   {
     id: 1,
     slug: '/',
@@ -43,7 +45,7 @@ const ContactInformation: FC<{ lang: string }> = ({ lang }) => {
     <>
       {data.length > 0 && (
         <div className="px-5 lg:px-0 xl:px-12 sm:grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-7 max-w-[1420px] mx-auto space-y-7 sm:space-y-0 pt-1">
-          {data?.map((item: any) => (
+          {data?.map((item) => (
             <div
               key={`contact--key${item.id}`}
               className="flex flex-col max-w-xs lg:flex-row lg:max-w-sm xl:ltr:pr-7 xl:rtl:pl-7"

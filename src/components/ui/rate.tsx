@@ -108,7 +108,7 @@ const Rate = forwardRef<any, RateProps>(
             rateClasses.firstStar,
             rateClasses.color,
             !disabled && rateClasses.transition,
-            rateClassName
+            rateClassName,
           )}
           {...props}
         />
@@ -122,7 +122,7 @@ const Rate = forwardRef<any, RateProps>(
         )} */}
       </div>
     );
-  }
+  },
 );
 
 Rate.displayName = 'Rate';

@@ -1,13 +1,13 @@
 'use client';
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import usePrice from '@framework/product/use-price';
 import cn from 'classnames';
 import { useCart } from '@contexts/cart/cart.context';
-import Text from '@components/ui/text';
+// import Text from '@components/ui/text';
 import Button from '@components/ui/button';
 import { CheckoutItem } from '@components/checkout/checkout-card-item';
-import { CheckoutCardFooterItem } from './checkout-card-footer-item';
+import {CheckoutCardFooterItem, FooterItemProps} from './checkout-card-footer-item';
 import { useRouter } from 'next/navigation';
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'src/app/i18n/client';
@@ -29,9 +29,9 @@ const CheckoutCard: React.FC<{ lang: string }> = ({ lang }) => {
     currencyCode: 'USD',
   });
   function orderHeader() {
-    !isEmpty && router.push(`/${lang}${ROUTES.ORDER}`);
+    if (!isEmpty) router.push(`/${lang}${ROUTES.ORDER}`);
   }
-  const checkoutFooter = [
+  const checkoutFooter: FooterItemProps[] = [
     {
       id: 1,
       name: t('text-sub-total'),
@@ -72,7 +72,7 @@ const CheckoutCard: React.FC<{ lang: string }> = ({ lang }) => {
           </p>
         )}
         {mounted &&
-          checkoutFooter.map((item: any) => (
+          checkoutFooter.map((item: FooterItemProps) => (
             <CheckoutCardFooterItem item={item} key={item.id} />
           ))}
         <Button
@@ -88,8 +88,6 @@ const CheckoutCard: React.FC<{ lang: string }> = ({ lang }) => {
           {t('button-order-now')}
         </Button>
       </div>
-     
-     
     </>
   );
 };

@@ -2,14 +2,17 @@ import SignupForm from '@components/auth/sign-up-form';
 import Divider from '@components/ui/divider';
 import { Metadata } from 'next';
 
-
 export const metadata: Metadata = {
   title: 'Sign Up',
 };
 
-export default async function Page({ params }: { params: any }) {
-  const { lang } = await params;
-    
+type Params = {
+    lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+const { lang } = await params;
+
   return (
     <>
       <Divider />

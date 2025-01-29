@@ -57,7 +57,7 @@ const SocialShareBox: React.FC<Props> = ({
     <div
       className={cn(
         'shadow-card bg-brand-light rounded-md p-4 md:p-6 lg:p-7',
-        className
+        className,
       )}
     >
       <Heading className="mb-2">{t('text-share-social-network')}</Heading>
@@ -112,7 +112,6 @@ const SocialShareBox: React.FC<Props> = ({
           />
           {!copyText.copied ? (
             <>
-              {/* @ts-ignore */}
               <CopyToClipboard
                 text={copyText.value}
                 onCopy={() =>

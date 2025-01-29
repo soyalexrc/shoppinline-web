@@ -2,9 +2,9 @@
 
 import { FC } from 'react';
 import Text from '@components/ui/text';
-import Image from '@components/ui/image';
+// import Image from '@components/ui/image';
 import Heading from '@components/ui/heading';
-import Link from '@components/ui/link';
+// import Link from '@components/ui/link';
 import { useIsMounted } from '@utils/use-is-mounted';
 import { useTranslation } from 'src/app/i18n/client';
 import LocationIcon from '@components/icons/contact/location-icon';
@@ -14,27 +14,21 @@ const data = [
   {
     id: 1,
     slug: '/',
-    icon: (
-        <LocationIcon  />
-    ),
+    icon: <LocationIcon />,
     name: 'text-office-location',
     description: 'text-office-location-details',
   },
   {
     id: 2,
     slug: '/',
-    icon: (
-        <PhoneIcon  />
-    ),
+    icon: <PhoneIcon />,
     name: 'text-phone',
     description: 'text-phone-details',
   },
   {
     id: 3,
     slug: '/',
-    icon: (
-        <MailIcon  />
-    ),
+    icon: <MailIcon />,
     name: 'text-email',
     description: 'text-email-details',
   },
@@ -55,20 +49,21 @@ const ContactSupport: FC<Props> = ({ lang }) => {
       </Heading>
 
       <div className="mx-auto space-y-4 mb-6">
-        {data.map((item, idx) => (
-            <div
-                key={`contact--key${item.id}`}
-                className="flex flex-col lg:flex-row max-w-xs lg:max-w-sm xl:pe-7"
-            >
-              <div className="flex-shrink-0 w-14  h-14 border-2 border-border-two p-3 rounded-md">{item.icon}</div>
-              <div className="lg:ps-3 2xl:ps-4 mt-4 lg:mt-0">
-                <Heading variant="base" className="">
-                  {t(item.name)}
-                </Heading>
-                <Text>{t(item.description)}</Text>
-              </div>
-
+        {data.map((item) => (
+          <div
+            key={`contact--key${item.id}`}
+            className="flex flex-col lg:flex-row max-w-xs lg:max-w-sm xl:pe-7"
+          >
+            <div className="flex-shrink-0 w-14  h-14 border-2 border-border-two p-3 rounded-md">
+              {item.icon}
             </div>
+            <div className="lg:ps-3 2xl:ps-4 mt-4 lg:mt-0">
+              <Heading variant="base" className="">
+                {t(item.name)}
+              </Heading>
+              <Text>{t(item.description)}</Text>
+            </div>
+          </div>
         ))}
       </div>
       <Text className="xl:leading-8">

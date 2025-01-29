@@ -36,7 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       'cursor-not-allowed hover:cursor-not-allowed bg-opacity-50 hover:bg-opacity-50':
         disabled,
     },
-    className
+    className,
   );
 
   return (

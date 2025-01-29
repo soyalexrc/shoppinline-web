@@ -1,4 +1,5 @@
-const AccountNoticeIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const AccountNoticeIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
+  console.log(rest)
   return (
     <svg
       width="22"

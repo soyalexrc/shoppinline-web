@@ -1,4 +1,4 @@
-const AccountOrderIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const AccountOrderIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       width="22"

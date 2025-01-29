@@ -47,7 +47,7 @@ export default function usePrice(
     amount: number;
     baseAmount?: number;
     currencyCode: string;
-  } | null
+  } | null,
 ) {
   const { amount, baseAmount, currencyCode } = data ?? {};
   const locale = 'en';

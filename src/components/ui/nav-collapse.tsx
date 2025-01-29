@@ -8,13 +8,13 @@ import {
 import { FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'src/app/i18n/client';
 
-type CollapseProps = {
-  lang: string;
-  title?: any;
-  content?: any;
-};
+// type CollapseProps = {
+//   lang: string;
+//   title?: any;
+//   content?: any;
+// };
 
-export const NavCollapse: React.FC<CollapseProps> = ({
+export const NavCollapse = ({
   lang,
   title,
   content,
@@ -29,7 +29,7 @@ export const NavCollapse: React.FC<CollapseProps> = ({
               <DisclosureButton className="flex justify-between w-full px-4 py-3 bg-white rounded shadow-category md:py-4">
                 <h2
                   className={cn(
-                    'flex items-center cursor-pointer text-sm lg:text-base text-brand-dark font-medium  '
+                    'flex items-center cursor-pointer text-sm lg:text-base text-brand-dark font-medium  ',
                   )}
                 >
                   <span className="opacity-50 text-brand-dark">

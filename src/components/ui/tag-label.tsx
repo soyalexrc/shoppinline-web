@@ -21,7 +21,7 @@ const TagLabel: React.FC<Props> = ({ className, data }) => {
     <div
       className={cn(
         'text-13px md:text-sm rounded hover:bg-fill-four block border border-border-four px-2 py-1 transition',
-        className
+        className,
       )}
       role="button"
       onClick={changeTags}

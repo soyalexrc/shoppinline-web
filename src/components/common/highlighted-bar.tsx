@@ -25,7 +25,7 @@ export default function HighlightedBar({
       className={cn(
         'z-50 w-full min-h-[40px] py-2 px-4 md:px-6 lg:px-8 flex items-center justify-center relative text-sm text-brand-light',
         variantBasedClasses[variant],
-        className
+        className,
       )}
     >
       {children}

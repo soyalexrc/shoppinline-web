@@ -4,9 +4,16 @@ import Text from '@components/ui/text';
 import StarIcon from '@components/icons/star-icon';
 import { useTranslation } from 'src/app/i18n/client';
 
+type Item = {
+  rating: number;
+  title: string;
+  description: string;
+  author: string;
+}
+
 interface ReviewProps {
   lang: string;
-  item: any;
+  item: Item;
   className?: string;
 }
 

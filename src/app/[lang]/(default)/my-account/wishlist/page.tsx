@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Wishlist',
 };
 
-export default async function WishlistPage({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
   const { lang } = await params;
   return <Wishlist lang={lang} />;
 }

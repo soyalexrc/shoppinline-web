@@ -4,7 +4,7 @@ import PlusIcon from '@components/icons/plus-icon';
 import { useTranslation } from 'src/app/i18n/client';
 
 type ButtonEvent = (
-  e: React.MouseEvent<HTMLButtonElement | MouseEvent>
+  e: React.MouseEvent<HTMLButtonElement | MouseEvent>,
 ) => void;
 
 type CounterProps = {
@@ -35,10 +35,11 @@ const Counter: React.FC<CounterProps> = ({
         {
           'h-8 md:h-10 bg-brand shadow-counter rounded-3xl':
             variant === 'mercury' || variant === 'cardv2',
-          'rounded-md h-11 md:h-14 bg-[#f3f5f9] w-40 mb-5': variant === 'single',
+          'rounded-md h-11 md:h-14 bg-[#f3f5f9] w-40 mb-5':
+            variant === 'single',
           'inline-flex': variant === 'cart',
         },
-        className
+        className,
       )}
     >
       <button
@@ -52,7 +53,7 @@ const Counter: React.FC<CounterProps> = ({
               variant === 'single',
             '!w-6 !h-6 pr-0 border border-border-three hover:bg-brand text-brand-muted hover:border-brand rounded-full hover:text-brand-light':
               variant === 'cart',
-          }
+          },
         )}
       >
         <span className="sr-only">{t('button-minus')}</span>
@@ -66,7 +67,7 @@ const Counter: React.FC<CounterProps> = ({
               variant === 'mercury' || variant === 'cardv2',
             'text-base md:text-[17px] w-12 md:w-12': variant === 'single',
             'text-15px w-9': variant === 'cart',
-          }
+          },
         )}
       >
         {value}
@@ -83,7 +84,7 @@ const Counter: React.FC<CounterProps> = ({
               variant === 'single',
             '!w-6 !h-6 border text-brand-muted border-border-three hover:bg-brand hover:border-brand rounded-full hover:text-brand-light !pr-0':
               variant === 'cart',
-          }
+          },
         )}
         title={disabled ? 'Out Of Stock' : ''}
       >

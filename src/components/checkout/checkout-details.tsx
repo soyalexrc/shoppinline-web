@@ -3,18 +3,18 @@
 import { useState } from 'react';
 import Button from '@components/ui/button';
 import Heading from '@components/ui/heading';
-import Contact from '@components/contact/contact';
+// import Contact from '@components/contact/contact';
 import Address from './address';
 import DeliveryNotes from './delivery-instruction';
 import DeliverySchedule from './schedule';
-import DeliveryTips from './delivery-tips';
+// import DeliveryTips from './delivery-tips';
 import StripeCheckoutInlineForm from './stripe-checkout-inline-form';
 import { useTranslation } from 'src/app/i18n/client';
 import { useIsMounted } from '@utils/use-is-mounted';
 
 const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');
-  const [bindIndex, setBindIndex] = useState(0);
+  const [bindIndex, setBindIndex] = useState<number>(0);
   const data = [
     {
       id: 1,
@@ -26,7 +26,7 @@ const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
       title: 'text-delivery-schedule',
       component: <DeliverySchedule lang={lang} />,
     },
-   
+
     {
       id: 4,
       title: 'text-payment-option',
@@ -37,9 +37,8 @@ const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
       title: 'text-delivery-instructions',
       component: <DeliveryNotes lang={lang} />,
     },
-   
   ];
-  const changeItem = (itemIndex: any) => {
+  const changeItem = (itemIndex: number) => {
     if (itemIndex !== bindIndex) {
       setBindIndex(itemIndex);
     }

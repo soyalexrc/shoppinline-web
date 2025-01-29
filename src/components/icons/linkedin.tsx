@@ -1,4 +1,4 @@
-const LinkedInIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const LinkedInIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       width="47"

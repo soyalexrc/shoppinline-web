@@ -8,7 +8,11 @@ import { useRouter } from 'next/router';
 import { getDirection } from '@utils/get-direction';
 import Image from '@components/ui/image';
 
-export default function SupperCategoryElectronicFeed({lang,}: { lang: string; })  {
+export default function SupperCategoryElectronicFeed({
+  lang,
+}: {
+  lang: string;
+}) {
   const { data: category } = useClothCategoryQuery({
     limit: LIMITS.FASHION_PRODUCTS_LIMITS,
   });

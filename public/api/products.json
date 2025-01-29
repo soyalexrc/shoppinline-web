@@ -337,7 +337,7 @@
       }
     ],
     "quantity": 170,
-    "price": 1.50,
+    "price": 1.5,
     "sale_price": null,
     "unit": "Common Good",
     "tag": [
@@ -1032,7 +1032,7 @@
     ],
     "quantity": 70,
     "price": 6.98,
-    "sale_price": 6.20,
+    "sale_price": 6.2,
     "unit": "Sagaform",
     "tag": [
       {
@@ -2494,7 +2494,7 @@
     ],
     "quantity": 70,
     "price": 1.99,
-    "sale_price": 1.50,
+    "sale_price": 1.5,
     "unit": "Common Good",
     "tag": [
       {

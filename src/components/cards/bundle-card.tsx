@@ -6,6 +6,15 @@ import { LinkProps } from 'next/link';
 import cn from 'classnames';
 import { useTranslation } from 'src/app/i18n/client';
 
+export type Bundle = {
+  image: string;
+  title: string;
+  description?: string;
+  bgColor?: string;
+  slug: string,
+  id: number
+}
+
 interface Props {
   lang: string;
   imgWidth?: number | string;
@@ -13,12 +22,7 @@ interface Props {
   className?: string;
   thumbnailClassName?: string;
   href: LinkProps['href'];
-  bundle: {
-    image: string;
-    title: string;
-    description?: string;
-    bgColor?: string;
-  };
+  bundle: Bundle;
 }
 
 const BundleCard: React.FC<Props> = ({

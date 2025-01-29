@@ -5,21 +5,21 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Transition,
+  // Transition,
 } from '@headlessui/react';
 
-import { RiArrowRightSLine } from 'react-icons/ri';
-import { FaPlus,FaMinus } from 'react-icons/fa';
+// import { RiArrowRightSLine } from 'react-icons/ri';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 import { useTranslation } from 'src/app/i18n/client';
 
-type CollapseProps = {
-  lang: string;
-  item: any;
-  translatorNS: string;
-  variant?: 'gray' | 'transparent';
-};
+// type CollapseProps = {
+//   lang: string;
+//   item: any;
+//   translatorNS: string;
+//   variant?: 'gray' | 'transparent';
+// };
 
-export const Accordion: React.FC<CollapseProps> = ({
+export const Accordion = ({
   lang,
   item,
   translatorNS,
@@ -40,24 +40,21 @@ export const Accordion: React.FC<CollapseProps> = ({
                     {
                       'md:text-base': variant === 'gray',
                       'md:text-base lg:text-lg': variant === 'transparent',
-                    }
+                    },
                   )}
                 >
                   {t(title)}
                 </span>
                 {open ? <FaMinus /> : <FaPlus />}
-              
               </DisclosureButton>
 
-           
-                {open && (
-                  <DisclosurePanel transition>
-                    <div className="px-5 pb-4 -mt-1 text-sm leading-7 2xl:pb-7 2xl:px-6 2xl:mt-0 2xl:text-15px text-gray-500">
-                      {t(content)}
-                    </div>
-                  </DisclosurePanel>
-                )}
-              
+              {open && (
+                <DisclosurePanel transition>
+                  <div className="px-5 pb-4 -mt-1 text-sm leading-7 2xl:pb-7 2xl:px-6 2xl:mt-0 2xl:text-15px text-gray-500">
+                    {t(content)}
+                  </div>
+                </DisclosurePanel>
+              )}
             </>
           )}
         </Disclosure>

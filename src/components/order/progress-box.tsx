@@ -2,7 +2,12 @@ import { BiCheck } from 'react-icons/bi';
 import Scrollbar from '@components/ui/scrollbar';
 
 type ProgressProps = {
-  data: any;
+  data: {
+      data: {
+          name: string;
+          serial: number;
+      }[]
+  };
   status: number;
 };
 
@@ -17,7 +22,7 @@ const ProgressBox: React.FC<ProgressProps> = ({ status, data }) => {
       }}
     >
       <div className="flex flex-row flex-wrap w-full pt-8 pb-10">
-        {data?.data?.map((item: any, index: number) => (
+        {data?.data?.map((item, index: number) => (
           <div className="block w-3/12" key={index}>
             {status >= item?.serial ? (
               <div className="text-center">

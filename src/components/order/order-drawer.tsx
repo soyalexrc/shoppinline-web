@@ -16,7 +16,7 @@ import { useTranslation } from 'src/app/i18n/client';
 const OrderDrawer: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');
   const { data, closeDrawer } = useUI();
-  let { shipping_address } = data;
+  const { shipping_address } = data;
 
   return (
     <>
@@ -53,7 +53,7 @@ const OrderDrawer: React.FC<{ lang: string }> = ({ lang }) => {
                 </div>
                 <div className="col-span-2">Price</div>
               </div>
-              {data?.products?.map((item: any, index: string) => (
+              {data?.products?.map((item, index: string) => (
                 <OrderDetailsContent key={index} item={item} />
               ))}
               <div className="mt-3 ltr:text-right rtl:text-left">

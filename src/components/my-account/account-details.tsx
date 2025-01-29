@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Input from '@components/ui/form/input';
 import PasswordInput from '@components/ui/form/password-input';
 import Button from '@components/ui/button';
@@ -145,11 +145,10 @@ const AccountDetails: React.FC<{ lang: string }> = ({ lang }) => {
             />
           </div>
         </div>
-       
+
         <div className="relative flex pb-2 mt-5 sm:ltr:ml-auto sm:rtl:mr-auto lg:pb-0">
           <Button
             type="submit"
-          
             variant="formButton"
             className="w-full sm:w-auto"
           >

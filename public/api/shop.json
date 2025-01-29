@@ -2,7 +2,7 @@
   "id": 1,
   "owner_id": 1,
   "owner_name": "Marcel",
-  "is_active" : true,
+  "is_active": true,
   "address": "22 Silver Spear St. San Diego, CA 92105, USA",
   "phone": "+88028567525999",
   "website": "https://uminex-next.vercel.app/",

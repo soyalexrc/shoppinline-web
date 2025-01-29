@@ -27,7 +27,6 @@ export default function Cart({ lang }: { lang: string }) {
         <Heading variant="titleMedium">{t('text-shopping-cart')}</Heading>
         <div className="flex items-center">
           {!isEmpty && (
-            // @ts-ignore
             <button
               className="flex flex-shrink items-center text-15px transition duration-150 ease-in focus:outline-none text-brand-dark opacity-50 hover:opacity-100 ltr:-mr-1.5 rtl:-ml-1.5"
               aria-label={t('text-clear-all')}

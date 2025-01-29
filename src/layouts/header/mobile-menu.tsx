@@ -130,7 +130,7 @@ export default function MobileMenu({ lang }: { lang: string }) {
               menuIndex={index}
               className={cn(
                 dept > 1 && 'ltr:pl-4 rtl:pr-4',
-                dept > 2 && 'ltr:pl-8 rtl:pr-8'
+                dept > 2 && 'ltr:pl-8 rtl:pr-8',
               )}
             />
           );
@@ -152,7 +152,7 @@ export default function MobileMenu({ lang }: { lang: string }) {
             onClick={closeSidebar}
             aria-label="close"
           >
-            <IoClose  />
+            <IoClose />
           </button>
         </div>
 

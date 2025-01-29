@@ -3,10 +3,10 @@
 import cn from 'classnames';
 import Image from '@components/ui/image';
 import Link from '@components/ui/link';
-import { Blog } from '@framework/types';
+import {Blog, Tag} from '@framework/types';
 
 import { useTranslation } from 'src/app/i18n/client';
-import { productPlaceholder } from '@assets/placeholders';
+// import { productPlaceholder } from '@assets/placeholders';
 import { ROUTES } from '@utils/routes';
 import { getCountview } from '@utils/get-countview';
 import LabelIcon from '@components/icons/label-icon';
@@ -14,7 +14,7 @@ import TagLabel from '@components/ui/tag-label';
 import SocialShareThis from '@components/ui/share-this';
 
 interface BlogProps {
-  blogData: any;
+  blogData: Blog;
   className?: string;
   lang: string;
 }
@@ -35,14 +35,14 @@ const BlogPostCard: React.FC<BlogProps> = ({ blogData, className, lang }) => {
     contentThree,
     quote,
   } = blogData ?? {};
-   const { t } = useTranslation(lang, 'common');
+  const { t } = useTranslation(lang, 'common');
   const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${ROUTES.BLOG}/${slug}`;
 
   return (
     <article
       className={cn(
         'flex flex-col product-card overflow-hidden  h-full bg-white rounded p-4 xl:p-5',
-        className
+        className,
       )}
       title={title}
     >
@@ -82,7 +82,8 @@ const BlogPostCard: React.FC<BlogProps> = ({ blogData, className, lang }) => {
         >
           <div className="card-img-container max-w-[1050px] overflow-hidden flex mx-auto relative rounded-xl">
             <Image
-              src={image ?? productPlaceholder}
+              // src={image ?? productPlaceholder}
+              src={image}
               alt={title || 'Product Image'}
               width={1050}
               height={460}
@@ -118,7 +119,7 @@ const BlogPostCard: React.FC<BlogProps> = ({ blogData, className, lang }) => {
               <li className="text-sm text-skin-base text-opacity-80 inline-flex items-center justify-center me-2 relative top-1">
                 <LabelIcon className="me-2" /> {t('text-tags')}:
               </li>
-              {tags?.map((item: any) => (
+              {tags?.map((item: Tag) => (
                 <li className="inline-block p-[3px]" key={`tag-${item.id}`}>
                   <TagLabel data={item} />
                 </li>

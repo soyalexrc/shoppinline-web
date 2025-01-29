@@ -15,13 +15,16 @@ function ClientRenderedHighLightedBar({ lang }: { lang: string }) {
   const { t } = useTranslation(lang, 'common');
   const [highlightedBar, setHighlightedBar] = useSessionStorage(
     'uminex-highlightedBar',
-    'false'
+    'false',
   );
 
   return (
     <>
       {highlightedBar !== 'true' && (
-        <HighlightedBar variant={"dark"} onClose={() => setHighlightedBar('true')}>
+        <HighlightedBar
+          variant={'dark'}
+          onClose={() => setHighlightedBar('true')}
+        >
           <div className="flex items-center">
             <div className="hidden sm:flex shrink-0 items-center justify-center bg-brand-light w-9 h-9 rounded-full ltr:mr-2.5 rtl:ml-2.5">
               <Image
@@ -58,17 +61,17 @@ export default function Home3Layout({
 
       {/* End of highlighted bar  */}
 
-      <Header lang={lang} className={"sm:mb-0"}/>
+      <Header lang={lang} className={'sm:mb-0'} />
       <main
-          className="relative flex-grow pt-5 xl:pt-0 "
+        className="relative flex-grow pt-5 xl:pt-0 "
         style={{
           WebkitOverflowScrolling: 'touch',
         }}
       >
         {children}
       </main>
-      <Footer lang={lang} showWidgetServices={true}  variant={"home3"} />
-        <BackToTopButton/>
+      <Footer lang={lang} showWidgetServices={true} variant={'home3'} />
+      <BackToTopButton />
       <MobileNavigation lang={lang} />
     </div>
   );

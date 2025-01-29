@@ -5,8 +5,11 @@ export const metadata: Metadata = {
   title: 'Change Password',
 };
 
+type Params = {
+  lang: string
+}
 
-export default async function ChangePasswordPage({ params }: { params: any }) {
-  const { lang } = await params;
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+ const { lang } = await params;
   return <ChangePassword lang={lang} />;
 }

@@ -3,7 +3,7 @@ import Input from '@components/ui/form/input';
 import { useState } from 'react';
 import Pagination from '@components/ui/pagination';
 import ActionsButton from '@components/ui/action-button';
-import { TotalPrice } from '@components/order/price';
+import {TotalPrice, TotalPriceItem} from '@components/order/price';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -11,7 +11,7 @@ import timezone from 'dayjs/plugin/timezone';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { BsSearch } from 'react-icons/bs';
 
-export const CreatedAt: React.FC<{ createdAt?: any }> = ({ createdAt }) => {
+export const CreatedAt: React.FC<{ createdAt?: string }> = ({ createdAt }) => {
   dayjs.extend(relativeTime);
   dayjs.extend(utc);
   dayjs.extend(timezone);
@@ -22,7 +22,20 @@ export const CreatedAt: React.FC<{ createdAt?: any }> = ({ createdAt }) => {
   );
 };
 
-export const Status: React.FC<{ item?: any }> = ({ item }) => {
+type Item = {
+    price: number;
+    name: string;
+    quantity: number;
+    image: {
+        thumbnail: string;
+    };
+    status: {
+      name: string;
+      color: string
+    }
+}
+
+export const Status: React.FC<{ item?: Item }> = ({ item }) => {
   return (
     <span className={item?.status?.name?.replace(/\s/g, '_').toLowerCase()}>
       <span
@@ -47,7 +60,7 @@ const columns = [
     dataIndex: 'created_at',
     key: 'created_at',
     width: 140,
-    render: function createdAt(items: any) {
+    render: function createdAt(items: string) {
       return <CreatedAt createdAt={items} />;
     },
   },
@@ -55,7 +68,7 @@ const columns = [
     title: 'Status',
     key: 'status',
     width: 145,
-    render: function status(item: any) {
+    render: function status(item: Item) {
       return <Status item={item} />;
     },
   },
@@ -69,7 +82,7 @@ const columns = [
     title: 'Total Price',
     key: 'total',
     width: 130,
-    render: function totalPrice(items: any) {
+    render: function totalPrice(items: TotalPriceItem) {
       return <TotalPrice items={items} />;
     },
   },
@@ -77,33 +90,40 @@ const columns = [
     dataIndex: '',
     key: 'operations',
     width: 80,
-    render: function actionsButton(item: any) {
+    render: function actionsButton(item: unknown) {
       return <ActionsButton item={item} />;
     },
     className: 'operations-cell',
   },
 ];
 
-const OrderTable: React.FC<{ orders?: any; lang: string }> = ({
+type Order = {
+    tracking_number: string;
+    created_at: string;
+    delivery_time: string;
+    products: Item[];
+}
+
+const OrderTable: React.FC<{ orders?: Order[]; lang: string }> = ({
   orders,
   lang,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [value, setValue] = useState('');
   const countPerPage = 5;
-  let [filterData, setDataValue] = useState(orders.slice(0, countPerPage));
+  const [filterData, setDataValue] = useState(orders.slice(0, countPerPage));
 
-  const updatePage = (p: any) => {
+  const updatePage = (p: number) => {
     setCurrentPage(p);
     const to = countPerPage * p;
     const from = to - countPerPage;
     setDataValue(orders.slice(from, to));
   };
 
-  const onChangeSearch = (e: any) => {
+  const onChangeSearch = (e: { target: { value: string } }) => {
     setCurrentPage(1);
-    let filter: any = orders
-      .filter((item: any) =>
+    const filter = orders
+      .filter((item) =>
         item.tracking_number
           .toLowerCase()
           .includes(e.target.value.toLowerCase()),
@@ -115,7 +135,7 @@ const OrderTable: React.FC<{ orders?: any; lang: string }> = ({
     }
     setDataValue(filter);
   };
-  const onSubmitHandle = (e: any) => {
+  const onSubmitHandle = (e) => {
     e.preventDefault();
   };
 

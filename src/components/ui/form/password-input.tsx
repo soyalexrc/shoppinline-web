@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import cn from 'classnames';
 import React, { InputHTMLAttributes, useState } from 'react';
 import { Eye } from '@components/icons/eye-icon';
@@ -31,6 +31,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
     },
     ref,
   ) => {
+      console.log(shadow);
     const [show, setShow] = useState(false);
 
     const { t } = useTranslation(lang);

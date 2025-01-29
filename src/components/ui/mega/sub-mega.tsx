@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router';
-import { useTranslation } from 'src/app/i18n/client';
+// import { useRouter } from 'next/router';
+// import { useTranslation } from 'src/app/i18n/client';
 import ListMenu from '@components/ui/mega/mega-menu';
 import Container from '@components/ui/container';
 import Image from '@components/ui/image';
 import { productPlaceholder } from '@assets/placeholders';
 import Link from '@components/ui/link';
 
-const SubMega = ({ item, lang }: any) => {
+const SubMega = ({ item, lang }) => {
   const {
     type,
     mega_categoryCol,
@@ -15,10 +15,13 @@ const SubMega = ({ item, lang }: any) => {
     mega_bannerUrl,
     mega_contentBottom,
   } = item ?? {};
-    const { t } = useTranslation(lang, 'menu');
+  console.log(type);
+  // const { t } = useTranslation(lang, 'menu');
   const widthCateArea = mega_bannerMode;
+  console.log(widthCateArea);
   let isBannerMode = false;
-  if (mega_bannerMode == 'left' || mega_bannerMode == 'right') isBannerMode = true;
+  if (mega_bannerMode == 'left' || mega_bannerMode == 'right')
+    isBannerMode = true;
 
   return (
     <div className="subMega shadow-dropDown bg-skin-fill  z-30 absolute start-0 opacity-0 group-hover:opacity-100">
@@ -30,7 +33,7 @@ const SubMega = ({ item, lang }: any) => {
             <ul
               className={`text-body text-sm grid grid-cols-${mega_categoryCol} gap-4 `}
             >
-              {item.subMenu.map((menu: any, index: number) => {
+              {item.subMenu.map((menu, index: number) => {
                 const dept: number = 1;
                 const menuName: string = `sidebar-menu-${dept}-${index}`;
                 return (
@@ -38,7 +41,7 @@ const SubMega = ({ item, lang }: any) => {
                     dept={dept}
                     data={menu}
                     hasSubMenu={menu.subMenu}
-                    menuName={menuName}
+                    // menuName={menuName}
                     key={menuName}
                     menuIndex={index}
                     lang={lang}

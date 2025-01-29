@@ -25,7 +25,7 @@ export default function ProductDetailsTab({ lang }: { lang: string }) {
                   'relative inline-block transition-all text-14px font-bold uppercase leading-5  focus:outline-none pb-4 hover:text-brand ltr:mr-8 rtl:ml-8',
                   selected
                     ? 'text-brand-dark  after:absolute after:w-full after:h-0.5 after:bottom-0 after:translate-y-[1px] after:ltr:left-0 after:rtl:right-0 after:bg-brand'
-                    : 'text-gray-400'
+                    : 'text-gray-400',
                 )
               }
             >
@@ -64,7 +64,6 @@ export default function ProductDetailsTab({ lang }: { lang: string }) {
                 UK 8-10, model shown is a UK 8 and 5’5. !!
               </p>
             </div>
-          
           </TabPanel>
           <TabPanel>
             <ProductReviewRating lang={lang} />

@@ -1205,7 +1205,7 @@
     "rating": 4.5,
     "discountPercentage": 2,
     "quantity": 170,
-    "price": 1.50,
+    "price": 1.5,
     "sale_price": null,
     "unit": "Common Good",
     "tag": [
@@ -1231,5 +1231,4 @@
       }
     ]
   }
-
 ]

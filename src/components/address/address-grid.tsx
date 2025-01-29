@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { TiPencil } from 'react-icons/ti';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Description, Label, Radio, RadioGroup } from '@headlessui/react';
@@ -9,20 +9,25 @@ import { formatAddress } from '@utils/format-address';
 import Button from '@components/ui/button';
 import { useTranslation } from 'src/app/i18n/client';
 
-const AddressGrid: React.FC<{ address?: any; lang: string }> = ({
+type Address = {
+    title: string,
+    address: string
+}
+
+const AddressGrid: React.FC<{ address?: Address[]; lang: string }> = ({
   address,
   lang,
 }) => {
   const { t } = useTranslation(lang, 'common');
   const { openModal } = useModalAction();
 
-  function handlePopupView(item: any) {
+  function handlePopupView(item: unknown) {
     openModal('ADDRESS_VIEW_AND_EDIT', item);
   }
 
   address = address || [];
 
-  const [selected, setSelected] = useState(address[0]);
+  const [selected, setSelected] = useState<Address>(address[0]);
   return (
     <div className="flex flex-col justify-between h-full -mt-4 text-15px md:mt-0">
       <RadioGroup
@@ -32,7 +37,7 @@ const AddressGrid: React.FC<{ address?: any; lang: string }> = ({
       >
         <Label className="sr-only">{t('address')}</Label>
         {address?.length > 0 ? (
-          address?.map((item: any, index: any) => (
+          address?.map((item: Address, index: number) => (
             <Radio
               key={index}
               value={item}

@@ -1,4 +1,4 @@
-const SearchIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const SearchIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...rest}>
       <path

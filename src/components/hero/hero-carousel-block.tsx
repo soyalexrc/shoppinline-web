@@ -1,12 +1,12 @@
 'use client';
 
-import BannerCard from '@components/cards/banner-card';
+import BannerCard, {Banner} from '@components/cards/banner-card';
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from '@components/ui/carousel/slider';
 
 interface Props {
   lang: string;
-  heroBanner?: any;
+  heroBanner?: Banner[];
   className?: string;
 }
 
@@ -23,7 +23,7 @@ const HeroCarouselBlock: React.FC<Props> = ({
         nextActivateId="hero-carousel-button-next"
         lang={lang}
       >
-        {heroBanner?.map((banner: any) => (
+        {heroBanner?.map((banner) => (
           <SwiperSlide key={`banner--key-${banner.id}`}>
             <BannerCard
               banner={banner}

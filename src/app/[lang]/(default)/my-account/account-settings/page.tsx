@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Account Settings',
 };
 
-export default async function AccountDetailsPage({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
   const { lang } = await params;
   return <AccountDetails lang={lang} />;
 }

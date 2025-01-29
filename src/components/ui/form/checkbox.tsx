@@ -3,7 +3,7 @@ import { useTranslation } from 'src/app/i18n/client';
 
 interface CheckBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   lang: string;
-  label?: string | any;
+  label?: string;
 }
 export const CheckBox = React.forwardRef<HTMLInputElement, CheckBoxProps>(
   ({ lang, label, ...rest }, ref) => {
@@ -21,7 +21,7 @@ export const CheckBox = React.forwardRef<HTMLInputElement, CheckBoxProps>(
         />
       </label>
     );
-  }
+  },
 );
 
 CheckBox.displayName = 'CheckBox';

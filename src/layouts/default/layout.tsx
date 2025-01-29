@@ -14,7 +14,7 @@ function ClientRenderedHighLightedBar({ lang }: { lang: string }) {
   const { t } = useTranslation(lang, 'common');
   const [highlightedBar, setHighlightedBar] = useSessionStorage(
     'uminex-highlightedBar',
-    'false'
+    'false',
   );
   return (
     <>

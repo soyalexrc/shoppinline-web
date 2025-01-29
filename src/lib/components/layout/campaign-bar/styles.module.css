@@ -1,23 +1,23 @@
 .container {
-    background-image: url("../../../../../public/images/layout/campain-bar.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  background-image: url('../../../../../public/images/layout/campain-bar.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .label {
-    color: #4d3f2f;
-    font-weight: bold;
-    font-size: 14px;
+  color: #4d3f2f;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .link {
-    color: #4d3f2f;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 14px;
+  color: #4d3f2f;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
 }

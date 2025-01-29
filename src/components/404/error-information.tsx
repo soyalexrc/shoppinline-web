@@ -14,7 +14,7 @@ const ErrorInformation: React.FC = () => {
         </p>
         <Link
           href={ROUTES.HOME}
-          className='text-[13px] md:text-sm lg:text-[15px] leading-4 inline-flex items-center font-medium cursor-pointer transition ease-in-out duration-300 bg-brand-dark text-white px-4 md:px-6 py-2.5 lg:py-3 hover:text-white bg-opacity-90 hover:bg-opacity-100 rounded-md'
+          className="text-[13px] md:text-sm lg:text-[15px] leading-4 inline-flex items-center font-medium cursor-pointer transition ease-in-out duration-300 bg-brand-dark text-white px-4 md:px-6 py-2.5 lg:py-3 hover:text-white bg-opacity-90 hover:bg-opacity-100 rounded-md"
         >
           <HomeIcon width="14" />
           <span className="ps-2 mt-0.5"> Back to Home</span>

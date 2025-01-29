@@ -9,7 +9,7 @@ export const fetchElectronictablesCategory = async ({ queryKey }: any) => {
 };
 export const useTopSellProductsQuery = (options: QueryOptionsType) => {
   return useQuery<Category[], Error>({
-      queryKey: [API_ENDPOINTS.TOPSELL_PRODUCTS, options],
-      queryFn: () => fetchElectronictablesCategory(options),
-    });
+    queryKey: [API_ENDPOINTS.TOPSELL_PRODUCTS, options],
+    queryFn: () => fetchElectronictablesCategory(options),
+  });
 };

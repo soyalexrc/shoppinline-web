@@ -20,8 +20,20 @@ import {
 } from 'react-icons/io5';
 import { useTranslation } from 'src/app/i18n/client';
 
+
+export type ShopSidebarItem = {
+    description: string;
+    address: string;
+    phone: string;
+    website: string;
+    name: string;
+    logo: {
+        original: string;
+    }
+}
+
 interface ShopSidebarProps {
-  data: any;
+  data: ShopSidebarItem;
   lang: string;
 }
 
@@ -40,7 +52,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data, lang }) => {
       <div className="w-full px-5 pb-8 text-center border-b border-gray-300 sm:px-8 lg:px-0 2xl:px-7">
         <div className="relative w-32 h-32 mx-auto">
           <Image
-            src={data?.logo?.original!}
+            src={data?.logo?.original}
             alt={data?.name}
             fill
             className="rounded-xl"

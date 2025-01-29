@@ -11,8 +11,6 @@ const fontBai = FontBai({
   variable: '--font-bai',
 });
 
-
-
 export const metadata: Metadata = {
   title: 'Uminex',
 };

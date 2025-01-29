@@ -1,6 +1,6 @@
 'use client';
 
-import BundleCard from '@components/cards/bundle-card';
+import BundleCard, {Bundle} from '@components/cards/bundle-card';
 import SectionHeader from '@components/common/section-header';
 import cn from 'classnames';
 import Carousel from '@components/ui/carousel/carousel';
@@ -11,7 +11,7 @@ import { ROUTES } from '@utils/routes';
 interface Props {
   lang: string;
   className?: string;
-  data: any;
+  data: Bundle[];
 }
 
 const breakpoints = {
@@ -52,7 +52,7 @@ export default function BundleComboGrid({
             nextActivateId="bundle-combo-carousel-button-next"
             lang={lang}
           >
-            {data?.map((item: any) => (
+            {data?.map((item) => (
               <SwiperSlide
                 key={`card-bundle--key-${item.id}`}
                 className="p-1.5 md:p-2"
@@ -71,7 +71,7 @@ export default function BundleComboGrid({
           </Carousel>
         ) : (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-            {data?.map((item: any) => (
+            {data?.map((item) => (
               <BundleCard
                 className="rounded-md shadow-category"
                 thumbnailClassName="w-32 2xl:w-36 3xl:w-[180px] px-2 py-3 2xl:px-4 2xl:py-3.5"

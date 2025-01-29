@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Help',
 };
 
-export default async function HelpCenter({ params }: { params: any }) {
-  const { lang } = await params;
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+ const { lang } = await params;
   return <Help lang={lang} />;
 }

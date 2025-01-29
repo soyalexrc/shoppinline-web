@@ -16,9 +16,9 @@ interface Props {
   };
 }
 
-const WidgetLink: React.FC<Props> = ({lang, className, data }) => {
+const WidgetLink: React.FC<Props> = ({ lang, className, data }) => {
   const { widgetTitle, lists } = data;
-  const { t } = useTranslation(lang,'footer');
+  const { t } = useTranslation(lang, 'footer');
   return (
     <div className={`${className}`}>
       <Heading

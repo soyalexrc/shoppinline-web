@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Notice',
 };
 
-export default async function LegalNotice({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
   const { lang } = await params;
   return <Legal lang={lang} />;
 }

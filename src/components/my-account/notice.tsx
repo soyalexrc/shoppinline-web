@@ -20,8 +20,8 @@ export default function LegalPage({ lang }: { lang: string }) {
         <div className="pt-6">
           <div className="w-full">
             {legalSetting?.map((item) => (
-              // @ts-ignore
               <Element
+                name={item.title}
                 key={item.title}
                 id={makeTitleToDOMId(item.title)}
                 className="mb-5 lg:mb-10"
@@ -32,7 +32,6 @@ export default function LegalPage({ lang }: { lang: string }) {
                 <div
                   className="text-sm leading-7 text-brand-dark opacity-70 lg:text-14px lg:leading-loose"
                   dangerouslySetInnerHTML={{
-                    // @ts-ignore
                     __html: t(`${item.description}`),
                   }}
                 />

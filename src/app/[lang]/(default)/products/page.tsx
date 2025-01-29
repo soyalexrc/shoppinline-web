@@ -7,9 +7,12 @@ export const metadata: Metadata = {
   title: 'Products',
 };
 
+type Params = {
+    lang: string
+}
 
-export default async function Page({ params }: { params: any }) {
-  const { lang } = await params;
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+ const { lang } = await params;
 
   return (
     <>

@@ -20,23 +20,23 @@ const TrendingProductFeed: FC<ProductFeedProps> = ({
   const { data, isLoading, error } = useTrendingProductsQuery({
     limit: limit,
   });
-    const breakpoints = {
-        '1280': {
-            slidesPerView: 4,
-        },
-        '1024': {
-            slidesPerView: 4,
-        },
-        '640': {
-            slidesPerView: 3,
-        },
-        '360': {
-            slidesPerView: 2,
-        },
-        '0': {
-            slidesPerView: 1,
-        },
-    };
+  const breakpoints = {
+    '1280': {
+      slidesPerView: 4,
+    },
+    '1024': {
+      slidesPerView: 4,
+    },
+    '640': {
+      slidesPerView: 3,
+    },
+    '360': {
+      slidesPerView: 2,
+    },
+    '0': {
+      slidesPerView: 1,
+    },
+  };
 
   return (
     <ProductsCarousel

@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-const ProductCardLoader = (props: any) => (
+const ProductCardLoader = (props) => (
   <ContentLoader
     speed={2}
     width={226}

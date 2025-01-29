@@ -63,7 +63,6 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
         spellCheck="false"
         rows={4}
         ref={ref}
-        // @ts-ignore
         placeholder={t(placeholder)}
         {...rest}
       />

@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Address',
 };
 
-export default async function AccountDetailsPage({ params }: { params: any }) {
-  const { lang } = await params;
+type Params = {
+  lang: string
+}
+
+export default async function AccountDetailsPage({ params }: { params: Params }) {
+ const { lang } = await params;
   return <AddressPageContent lang={lang} />;
 }

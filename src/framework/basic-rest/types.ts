@@ -1,4 +1,3 @@
-
 export type CategoriesQueryOptionsType = {
   text?: string;
   category?: string;
@@ -12,7 +11,6 @@ export type QueryOptionsType = {
   status?: string;
   limit?: number;
 };
-
 
 export type Attachment = {
   id: string | number;
@@ -70,9 +68,9 @@ export type Product = {
   brand: string;
   description?: string;
   variations?: object;
-  rating:number;
-  discountPercentage:number;
-  weight:number;
+  rating: number;
+  discountPercentage: number;
+  weight: number;
   [key: string]: unknown;
 };
 export type OrderItem = {
@@ -123,6 +121,7 @@ export type Shop = {
 export type Blog = {
   id: number | string;
   title: string;
+  slug: string;
   subTitle: string;
   shortDescription: string;
   authorName: string;

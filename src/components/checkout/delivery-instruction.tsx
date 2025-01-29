@@ -8,7 +8,7 @@ interface ContactFormValues {
   default: boolean;
 }
 
-const DeliveryInstructions: React.FC<{ data?: any; lang: string }> = ({
+const DeliveryInstructions: React.FC<{ data?: string; lang: string }> = ({
   data,
   lang,
 }) => {
@@ -20,9 +20,11 @@ const DeliveryInstructions: React.FC<{ data?: any; lang: string }> = ({
   } = useForm<ContactFormValues>({
     defaultValues: {
       instructionNote: data || '',
-      default: data || false,
+      default: Boolean(data) || false,
     },
   });
+
+  console.log(errors);
 
   function onSubmit(values: ContactFormValues) {
     console.log(values, 'Delivery Note');

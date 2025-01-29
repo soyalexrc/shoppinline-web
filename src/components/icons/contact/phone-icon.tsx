@@ -1,4 +1,4 @@
-const PhoneIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const PhoneIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       viewBox="0 0 60 60"

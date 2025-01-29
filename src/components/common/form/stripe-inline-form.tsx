@@ -12,7 +12,7 @@ const stripePromise = loadStripe(
 );
 type Props = {
   buttonText?: string;
-  getToken?: any;
+  getToken?: (token: any) => void;
 };
 const StripeForm: React.FC<Props> = ({ buttonText, getToken }) => {
   // Get a reference to Stripe or Elements using hooks.
@@ -55,13 +55,16 @@ const StripeForm: React.FC<Props> = ({ buttonText, getToken }) => {
 
 type Item = {
   item: {
-    price: any;
+    price: number;
     buttonText: string;
   };
 };
 
 const StripePaymentForm = ({ item: { price, buttonText } }: Item) => {
-  const sendTokenToServer = async (token: any) => {};
+  console.log(price)
+  const sendTokenToServer = async (token: any) => {
+    console.log(token);
+  };
 
   return (
     <Elements stripe={stripePromise}>

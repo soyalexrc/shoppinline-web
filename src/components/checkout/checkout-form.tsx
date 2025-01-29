@@ -134,9 +134,7 @@ const CheckoutForm: React.FC<{ lang: string }> = ({ lang }) => {
             lang={lang}
           />
           <div className="flex w-full">
-            <Button
-              className="w-full sm:w-auto"
-            >
+            <Button className="w-full sm:w-auto">
               {t('common:button-place-order')}
             </Button>
           </div>

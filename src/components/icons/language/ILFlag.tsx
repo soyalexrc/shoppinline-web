@@ -1,4 +1,5 @@
-export const ILFlag: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+export const ILFlag: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
+  console.log(rest)
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -30,7 +30,7 @@ const SwitchComponent = React.forwardRef<any, SwitchProps>(
         />
       </Switch>
     );
-  }
+  },
 );
 
 SwitchComponent.displayName = 'SwitchComponent';

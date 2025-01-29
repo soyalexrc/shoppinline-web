@@ -29,13 +29,13 @@ const data = [
     title: 'Discover Residential Lighting',
     description: 'Flat 10% Off',
   },
-    {
-        id: 4,
-        slug: 'authentic-japanese-food-in-real-taste',
-        image: '/assets/images/collection/top-offer-4.png',
-        title: 'Sectional Sofas from $14.00',
-        description: 'Up to 20% Offer',
-    },
+  {
+    id: 4,
+    slug: 'authentic-japanese-food-in-real-taste',
+    image: '/assets/images/collection/top-offer-4.png',
+    title: 'Sectional Sofas from $14.00',
+    description: 'Up to 20% Offer',
+  },
 ];
 
 interface Props {
@@ -82,9 +82,7 @@ const CollectionOffers: React.FC<Props> = ({
           lang={lang}
         >
           {data?.map((item) => (
-            <SwiperSlide
-              key={`collection-key-${item.id}`}
-            >
+            <SwiperSlide key={`collection-key-${item.id}`}>
               <CollectionOffer
                 key={item.id}
                 collection={item}

@@ -1,4 +1,4 @@
-const ArrowRight: React.FC<React.SVGAttributes<{}>> = (props) => (
+const ArrowRight: React.FC<React.SVGAttributes<object>> = (props) => (
   <svg
     width="17"
     height="17"

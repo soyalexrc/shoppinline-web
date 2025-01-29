@@ -26,8 +26,8 @@ export default function Home8Layout({
       >
         {children}
       </main>
-      <Footer lang={lang} showWidgetServices={false} variant={"home8"}/>
-      <BackToTopButton/>
+      <Footer lang={lang} showWidgetServices={false} variant={'home8'} />
+      <BackToTopButton />
       <MobileNavigation lang={lang} />
     </div>
   );

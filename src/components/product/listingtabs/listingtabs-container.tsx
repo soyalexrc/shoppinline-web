@@ -1,5 +1,5 @@
-"use client";
-import {ROUTES} from '@utils/routes';
+'use client';
+import { ROUTES } from '@utils/routes';
 import ProductsCarousel from '@components/product/products-carousel';
 
 interface Props {

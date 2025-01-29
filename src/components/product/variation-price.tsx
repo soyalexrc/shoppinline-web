@@ -16,7 +16,7 @@ export default function VariationPrice({
         : selectedVariation.price,
       baseAmount: selectedVariation.price,
       currencyCode: 'USD',
-    }
+    },
   );
   const { price: min_price } = usePrice({
     amount: minPrice,

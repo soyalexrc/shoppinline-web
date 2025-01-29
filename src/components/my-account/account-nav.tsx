@@ -5,6 +5,7 @@ import { useLogoutMutation } from '@framework/auth/use-logout';
 import { useTranslation } from 'src/app/i18n/client';
 import LogoutIcon from '@components/icons/account-logout';
 import Link from '@components/ui/link';
+import {JSX} from "react";
 
 type Option = {
   name: string;
@@ -35,12 +36,12 @@ export default function AccountNav({
             key={item.slug}
             href={`/${lang}${item.slug}`}
             className={`flex items-center cursor-pointer text-sm lg:text-15px text-brand-dark py-3.5 px-3.5 xl:px-4 2xl:px-5 mb-1 hover:text-brand ${
-              mainPath === menuPath ? 'bg-fill-secondary font-medium' : 'font-normal'
+              mainPath === menuPath
+                ? 'bg-fill-secondary font-medium'
+                : 'font-normal'
             }`}
           >
-            <span className="flex justify-center w-6 me-1 ">
-              {item.icon}
-            </span>
+            <span className="flex justify-center w-6 me-1 ">{item.icon}</span>
             <span className="ltr:pl-1 lg:rtl:pr-1.5">{t(item.name)}</span>
           </Link>
         );

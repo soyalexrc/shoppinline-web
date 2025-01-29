@@ -3,6 +3,10 @@ import Link from '@components/ui/link';
 import { LinkProps } from 'next/link';
 import { useTranslation } from 'src/app/i18n/client';
 import cn from 'classnames';
+import {Bundle} from "@components/cards/bundle-card";
+
+
+
 
 interface Props {
   lang: string;
@@ -12,12 +16,7 @@ interface Props {
   thumbnailClassName?: string;
   effectActive?: boolean;
   href: LinkProps['href'];
-  bundle: {
-    image: string;
-    title: string;
-    description?: string;
-    color?: string;
-  };
+  bundle: Bundle;
 }
 
 const BundleCardGrid: React.FC<Props> = ({

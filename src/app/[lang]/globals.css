@@ -14,9 +14,9 @@
     @apply antialiased bg-brand-light text-brand-muted font-body;
     font-family: 'Bai Jamjuree', sans-serif;
   }
-    .fontManrope{
-        font-family: 'Manrope', sans-serif;
-    }
+  .fontManrope {
+    font-family: 'Manrope', sans-serif;
+  }
   p {
     @apply mb-5;
   }
@@ -156,7 +156,7 @@ input:checked + .slider:before {
 .overlay.open,
 .overlay.input-focus-overlay-open,
 .overlay.open-search-overlay,
-.category-dropdown-menu  li:hover > .dropdownMenu {
+.category-dropdown-menu li:hover > .dropdownMenu {
   opacity: 1;
   visibility: visible;
 }
@@ -180,7 +180,6 @@ input:checked + .slider:before {
 .scroll-snap-align-start {
   scroll-snap-align: start;
 }
-
 
 /* Breadcrumb truncate last child */
 
@@ -220,7 +219,7 @@ input:checked + .slider:before {
   }
 
   .sticky-header.is-scrolling .headerMenu {
-    @apply w-auto ;
+    @apply w-auto;
   }
 
   .header-one.sticky-header.is-scrolling .headerMenu,
@@ -351,7 +350,7 @@ input:checked + .slider:before {
   background-color: #ffffff;
 }
 .accordion__panel .accordion__button {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .address__box:hover .address__actions {

@@ -1,7 +1,21 @@
 import usePrice from '@framework/product/use-price';
-import { calculateTotal } from '@contexts/cart/cart.utils';
+import {calculateTotal, CartItem} from '@contexts/cart/cart.utils';
 
-export const TotalPrice: React.FC<{ items?: any }> = ({ items }) => {
+export type TotalPriceItem = {
+    products: CartItem[];
+    delivery_fee: number;
+    discount: number;
+}
+
+export type DiscountPriceItem = {
+  discount: number;
+}
+
+export type DeliveryItem = {
+  delivery: number
+}
+
+export const TotalPrice: React.FC<{ items?: TotalPriceItem }> = ({ items }) => {
   const { price } = usePrice({
     amount: Math.round(
       calculateTotal(items?.products) + items?.delivery_fee - items?.discount,
@@ -11,7 +25,7 @@ export const TotalPrice: React.FC<{ items?: any }> = ({ items }) => {
   return <span className="total_price">{price}</span>;
 };
 
-export const DiscountPrice = (discount: any) => {
+export const DiscountPrice = (discount: DiscountPriceItem) => {
   const { price } = usePrice({
     amount: discount?.discount,
     currencyCode: 'USD',
@@ -19,7 +33,7 @@ export const DiscountPrice = (discount: any) => {
   return <>-{price}</>;
 };
 
-export const DeliveryFee = (delivery: any) => {
+export const DeliveryFee = (delivery: DeliveryItem) => {
   const { price } = usePrice({
     amount: delivery?.delivery,
     currencyCode: 'USD',
@@ -27,7 +41,7 @@ export const DeliveryFee = (delivery: any) => {
   return <>{price}</>;
 };
 
-export const SubTotalPrice: React.FC<{ items?: any }> = ({ items }) => {
+export const SubTotalPrice: React.FC<{ items?: CartItem[] }> = ({ items }) => {
   const { price } = usePrice({
     amount: calculateTotal(items),
     currencyCode: 'USD',

@@ -1,4 +1,4 @@
-const AccountNotificationIcon: React.FC<React.SVGAttributes<{}>> = ({
+const AccountNotificationIcon: React.FC<React.SVGAttributes<object>> = ({
   ...rest
 }) => {
   return (

@@ -5,9 +5,20 @@ import { useCart } from '@contexts/cart/cart.context';
 import usePrice from '@framework/product/use-price';
 import { ROUTES } from '@utils/routes';
 import Counter from '@components/ui/counter';
+import {Item} from "@contexts/cart/cart.utils";
+//
+// type Item = {
+//     id: string;
+//     name: string;
+//     slug: string;
+//     unit: string;
+//     quantity: number;
+//     image: string;
+//     itemTotal: number;
+// }
 
 type CartItemProps = {
-  item: any;
+  item: Item;
   lang: string;
 };
 

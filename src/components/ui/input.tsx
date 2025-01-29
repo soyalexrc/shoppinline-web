@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React, { InputHTMLAttributes } from 'react';
-import Button from "@components/ui/button";
+// import Button from '@components/ui/button';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       inputClassName,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const rootClassName = cn(
       classes.root,
@@ -48,7 +48,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       {
         [classes.shadow]: shadow,
       },
-      inputClassName
+      inputClassName,
     );
     return (
       <div className={className}>
@@ -65,7 +65,6 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
           name={name}
           type={type}
           ref={ref}
-          // @ts-ignore
           placeholder={placeholder}
           className={rootClassName}
           autoComplete="off"
@@ -76,7 +75,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         {error && <p className="my-2 text-13px text-skin-red">{error}</p>}
       </div>
     );
-  }
+  },
 );
 
 export default Input;

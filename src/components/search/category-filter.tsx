@@ -5,16 +5,12 @@ import Scrollbar from '@components/ui/scrollbar';
 import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
 import { useCategoriesQuery } from '@framework/category/get-filter-categories';
 import { useTranslation } from 'src/app/i18n/client';
-import {LIMITS} from "@framework/utils/limits";
+import { LIMITS } from '@framework/utils/limits';
 
 export const CategoryFilter = ({ lang }: { lang: string }) => {
   const { t } = useTranslation(lang, 'common');
-  const {
-    data,
-    isLoading,
-    error,
-  } =  useCategoriesQuery({
-      limit: LIMITS.CATEGORIES_LIMITS
+  const { data, isLoading, error } = useCategoriesQuery({
+    limit: LIMITS.CATEGORIES_LIMITS,
   });
 
   if (isLoading) {
@@ -30,7 +26,9 @@ export const CategoryFilter = ({ lang }: { lang: string }) => {
 
   return (
     <div className="block mb-10">
-      <Heading className="uppercase mb-3 block-title">{t('text-categories')}</Heading>
+      <Heading className="uppercase mb-3 block-title">
+        {t('text-categories')}
+      </Heading>
       <div className="max-h-full overflow-hidden">
         <Scrollbar className="w-full category-filter-scrollbar">
           {data?.categories?.data?.length ? (

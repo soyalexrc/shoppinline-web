@@ -17,7 +17,7 @@ const ShopsPageContent: React.FC<{ lang: string }> = ({ lang }) => {
 
   return (
     <div className=" pb-14 lg:pb-16 xl:pb-20 pt-14">
-        <Container>
+      <Container>
         <Heading variant="titleLarge" className="mb-4 lg:mb-6">
           {t('text-all-shops')}
         </Heading>

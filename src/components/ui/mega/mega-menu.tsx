@@ -2,7 +2,7 @@ import { useTranslation } from 'src/app/i18n/client';
 import Link from '@components/ui/link';
 import Image from '@components/ui/image';
 
-const ListMenu = ({ dept, data, hasSubMenu, menuIndex, lang }: any) => {
+const ListMenu = ({ dept, data, hasSubMenu, menuIndex, lang }) => {
   const { t } = useTranslation(lang, 'menu');
 
   return (
@@ -39,18 +39,18 @@ const ListMenu = ({ dept, data, hasSubMenu, menuIndex, lang }: any) => {
   );
 };
 
-const SubMenu: React.FC<any> = ({ dept, data, menuIndex, lang }) => {
+const SubMenu= ({ dept, data, menuIndex, lang }) => {
   dept = dept + 1;
   return (
     <ul className="subMenuChild  w-full">
-      {data?.map((menu: any, index: number) => {
+      {data?.map((menu, index: number) => {
         const menuName: string = `sidebar-submenu-${dept}-${menuIndex}-${index}`;
         return (
           <ListMenu
             dept={dept}
             data={menu}
             hasSubMenu={menu.subMenu}
-            menuName={menuName}
+            // menuName={menuName}
             key={menuName}
             menuIndex={index}
             lang={lang}

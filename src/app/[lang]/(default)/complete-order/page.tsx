@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'Order',
 };
 
-export default async function Order({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function Order({ params }: { params: Params }) {
   const { lang } = await params;
   return (
     <>

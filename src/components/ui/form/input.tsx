@@ -72,7 +72,6 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
           name={name}
           type={type}
           ref={ref}
-          // @ts-ignore
           placeholder={t(placeholder)}
           className={rootClassName}
           autoComplete="off"

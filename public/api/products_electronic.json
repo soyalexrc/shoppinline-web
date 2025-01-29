@@ -476,7 +476,7 @@
     ],
     "quantity": 70,
     "price": 1.99,
-    "sale_price": 1.50,
+    "sale_price": 1.5,
     "unit": "OFS",
     "tag": [
       {
@@ -889,7 +889,7 @@
     ],
     "quantity": 70,
     "price": 2.74,
-    "sale_price": 2.50,
+    "sale_price": 2.5,
     "unit": "Sagaform"
   },
   {
@@ -926,7 +926,7 @@
     ],
     "quantity": 70,
     "price": 200.74,
-    "sale_price": 452.50,
+    "sale_price": 452.5,
     "unit": "Sagaform"
   }
 ]

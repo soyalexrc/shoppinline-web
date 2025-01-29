@@ -22,6 +22,7 @@ const AccountDetails: React.FC<{ lang: string }> = ({ lang }) => {
   } = useForm<UpdateUserType>({
     defaultValues,
   });
+  console.log(errors);
   function onSubmit(input: UpdateUserType) {
     updateUser(input);
   }

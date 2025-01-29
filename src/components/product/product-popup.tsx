@@ -82,7 +82,7 @@ export default function ProductPopup({ lang }: { lang: string }) {
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
       Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
+        attributes.hasOwnProperty(variation),
       )
     : true;
   let selectedVariation: any = {};
@@ -90,8 +90,8 @@ export default function ProductPopup({ lang }: { lang: string }) {
     selectedVariation = data?.variation_options?.find((o: any) =>
       isEqual(
         o.options.map((v: any) => v.value).sort(),
-        Object.values(attributes).sort()
-      )
+        Object.values(attributes).sort(),
+      ),
     );
   }
   const item = generateCartItem(data, selectedVariation);
@@ -164,9 +164,7 @@ export default function ProductPopup({ lang }: { lang: string }) {
 
             <div className="flex-shrink-0 flex flex-col lg:w-[430px] xl:w-[520px] 2xl:w-[520px]">
               <div className="pt-5 lg:pt-0 pb-5">
-                <div
-                  className="mb-2 md:mb-2.5 block -mt-1.5"
-                >
+                <div className="mb-2 md:mb-2.5 block -mt-1.5">
                   <h2 className="text-lg font-medium transition-colors duration-300 text-brand-dark md:text-xl xl:text-2xl ">
                     {name}
                   </h2>
@@ -330,10 +328,10 @@ export default function ProductPopup({ lang }: { lang: string }) {
                             rel="noreferrer"
                           >
                             <Image
-                            src={item.image}
-                            alt={t(item.name)}
-                            width={item.width}
-                            height={item.height}
+                              src={item.image}
+                              alt={t(item.name)}
+                              width={item.width}
+                              height={item.height}
                             />
                           </a>
                         </li>
@@ -350,7 +348,6 @@ export default function ProductPopup({ lang }: { lang: string }) {
                 <Text variant="small">
                   {description.split(' ').slice(0, 40).join(' ')}
                   {'...'}
-
                 </Text>
               </div>
             </div>

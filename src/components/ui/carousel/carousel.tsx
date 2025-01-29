@@ -14,27 +14,27 @@ import {
 import 'swiper/css/autoplay';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import { Swiper as SwiperTypes } from 'swiper/types';
+// import { Swiper as SwiperTypes } from 'swiper/types';
 
-type CarouselPropsType = {
-  lang?: string;
-  className?: string;
-  buttonGroupClassName?: string;
-  prevActivateId?: string;
-  nextActivateId?: string;
-  prevButtonClassName?: string;
-  nextButtonClassName?: string;
-  buttonSize?: 'default' | 'small';
-  centeredSlides?: boolean;
-  loop?: boolean;
-  slidesPerColumn?: number;
-  breakpoints?: {} | any;
-  spaceBetween?: number;
-  pagination?: {} | any;
-  navigation?: {} | any;
-  autoplay?: {} | any;
-  grid?: {} | any;
-};
+// type CarouselPropsType = {
+//   lang?: string;
+//   className?: string;
+//   buttonGroupClassName?: string;
+//   prevActivateId?: string;
+//   nextActivateId?: string;
+//   prevButtonClassName?: string;
+//   nextButtonClassName?: string;
+//   buttonSize?: 'default' | 'small';
+//   centeredSlides?: boolean;
+//   loop?: boolean;
+//   slidesPerColumn?: number;
+//   breakpoints?: {} | any;
+//   spaceBetween?: number;
+//   pagination?: {} | any;
+//   navigation?: {} | any;
+//   autoplay?: {} | any;
+//   grid?: {} | any;
+// };
 
 export default function Carousel({
   lang,
@@ -54,16 +54,18 @@ export default function Carousel({
   grid,
   autoplay,
   ...props
-}: React.PropsWithChildren<CarouselPropsType>) {
+}) {
+  console.log(loop)
+// }: React.PropsWithChildren<CarouselPropsType>) {
   const dir = getDirection(lang);
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
-  let nextButtonClasses = cn(
+  const nextButtonClasses = cn(
     'swiper-next w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 text-base lg:text-lg xl:text-xl cursor-pointer flex items-center justify-center rounded-full bg-brand-light absolute transition duration-300 hover:bg-brand hover:text-brand-light focus:outline-none transform shadow-navigation',
     { '3xl:text-2xl': buttonSize === 'default' },
     nextButtonClassName,
   );
-  let prevButtonClasses = cn(
+  const prevButtonClasses = cn(
     'swiper-prev w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 text-base lg:text-lg xl:text-xl cursor-pointer flex items-center justify-center rounded-full bg-brand-light absolute transition duration-300 hover:bg-brand hover:text-brand-light focus:outline-none transform shadow-navigation',
     { '3xl:text-2xl': buttonSize === 'default' },
     prevButtonClassName,
@@ -85,8 +87,12 @@ export default function Carousel({
         navigation={
           navigation
             ? {
-                prevEl: prevActivateId.length? `#${prevActivateId}`: prevRef.current!, // Assert non-null
-                nextEl: nextActivateId.length ? `#${nextActivateId}` : nextRef.current!, // Assert non-null
+                prevEl: prevActivateId.length
+                  ? `#${prevActivateId}`
+                  : prevRef.current!, // Assert non-null
+                nextEl: nextActivateId.length
+                  ? `#${nextActivateId}`
+                  : nextRef.current!, // Assert non-null
               }
             : {}
         }

@@ -72,7 +72,7 @@ export default function CartSidebar({ lang }: { lang: string }) {
               {
                 'cursor-not-allowed !text-brand-dark !text-opacity-25 !bg-[#EEEEEE] hover:!bg-[#EEEEEE]':
                   isEmpty,
-              }
+              },
             )}
           >
             <span className="py-0.5">{t('text-proceed-to-checkout')}</span>

@@ -1,5 +1,5 @@
 import {
-  Item,
+  CartItem,
   UpdateItemInput,
   addItemWithQuantity,
   removeItemOrQuantity,
@@ -13,19 +13,19 @@ import {
 } from './cart.utils';
 
 interface Metadata {
-  [key: string]: any;
+  [key: string]: string;
 }
 
 type Action =
-  | { type: 'ADD_ITEM_WITH_QUANTITY'; item: Item; quantity: number }
-  | { type: 'REMOVE_ITEM_OR_QUANTITY'; id: Item['id']; quantity?: number }
-  | { type: 'ADD_ITEM'; id: Item['id']; item: Item }
-  | { type: 'UPDATE_ITEM'; id: Item['id']; item: UpdateItemInput }
-  | { type: 'REMOVE_ITEM'; id: Item['id'] }
+  | { type: 'ADD_ITEM_WITH_QUANTITY'; item: CartItem; quantity: number }
+  | { type: 'REMOVE_ITEM_OR_QUANTITY'; id: CartItem['id']; quantity?: number }
+  | { type: 'ADD_ITEM'; id: CartItem['id']; item: CartItem }
+  | { type: 'UPDATE_ITEM'; id: CartItem['id']; item: UpdateItemInput }
+  | { type: 'REMOVE_ITEM'; id: CartItem['id'] }
   | { type: 'RESET_CART' };
 
 export interface State {
-  items: Item[];
+  items: CartItem[];
   isEmpty: boolean;
   totalItems: number;
   totalUniqueItems: number;
@@ -77,7 +77,7 @@ export function cartReducer(state: State, action: Action): State {
   }
 }
 
-const generateFinalState = (state: State, items: Item[]) => {
+const generateFinalState = (state: State, items: CartItem[]) => {
   const totalUniqueItems = calculateUniqueItems(items);
   return {
     ...state,

@@ -32,7 +32,7 @@ export default function SelectedFilters({ lang }: { lang: string }) {
   }, [searchParams]);
 
   function handleArrayUpdate(key: string, item: string) {
-    let o = searchParams?.get(key)?.split(',');
+    const o = searchParams?.get(key)?.split(',');
     if (o?.includes(item)) {
       updateQueryparams(key, o.filter((i) => i !== item).join(','));
     }
@@ -42,8 +42,9 @@ export default function SelectedFilters({ lang }: { lang: string }) {
       {!isEmpty(searchParams?.toString()) && (
         <div className="block mb-10 ">
           <div className="flex items-center justify-between mb-5">
-            <Heading className="uppercase block-title">{t('text-filters')}</Heading>
-            {/* @ts-ignore */}
+            <Heading className="uppercase block-title">
+              {t('text-filters')}
+            </Heading>
             <button
               className="flex-shrink transition duration-150 ease-in text-13px focus:outline-none hover:text-brand-dark"
               aria-label={t('text-clear-all')}
@@ -61,7 +62,7 @@ export default function SelectedFilters({ lang }: { lang: string }) {
                   <FilteredItem
                     itemKey={key ? key : ' '}
                     key={item}
-                    itemValue={item as any}
+                    itemValue={item}
                     onClick={() => handleArrayUpdate(key, item)}
                   />
                 ));
@@ -70,7 +71,7 @@ export default function SelectedFilters({ lang }: { lang: string }) {
                   <FilteredItem
                     itemKey={key ? key : ' '}
                     key={key}
-                    itemValue={value as any}
+                    itemValue={value as string}
                     onClick={() => {
                       clearQueryParam([key]);
                     }}

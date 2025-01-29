@@ -1,10 +1,10 @@
 'use client';
-import type {FC} from 'react';
+import type { FC } from 'react';
 import Alert from '@components/ui/alert';
 import cn from 'classnames';
-import {useBlogPostQuery} from '@framework/blog/get-blog-post';
+import { useBlogPostQuery } from '@framework/blog/get-blog-post';
 
-import BlogPostCard from "@components/blog/blog-post-card";
+import BlogPostCard from '@components/blog/blog-post-card';
 
 interface blogGridProps {
   className?: string;
@@ -12,7 +12,6 @@ interface blogGridProps {
 }
 
 export const BlogPost: FC<blogGridProps> = ({ className, lang }) => {
-
   const { data, isLoading, error } = useBlogPostQuery();
   if (isLoading) return <p>Loading...</p>;
   return (

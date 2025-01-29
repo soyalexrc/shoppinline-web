@@ -1,4 +1,4 @@
-const MailIcon: React.FC<React.SVGAttributes<{}>> = ({ ...rest }) => {
+const MailIcon: React.FC<React.SVGAttributes<object>> = ({ ...rest }) => {
   return (
     <svg
       viewBox="0 0 62 62"

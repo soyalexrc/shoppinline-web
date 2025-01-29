@@ -10,15 +10,21 @@ import { useCart } from '@contexts/cart/cart.context';
 import AddToCart from '@components/product/add-to-cart';
 import { useTranslation } from 'src/app/i18n/client';
 import { productPlaceholder } from '@assets/placeholders';
-import {ROUTES} from "@utils/routes";
+import { ROUTES } from '@utils/routes';
 
 interface ProductProps {
   product: Product;
   className?: string;
   lang: string;
 }
-function RenderPopupOrAddToCart({ data , lang}: { data: Product , lang:string}) {
-  const { t } = useTranslation(lang ,'common');
+function RenderPopupOrAddToCart({
+  data,
+  lang,
+}: {
+  data: Product;
+  lang: string;
+}) {
+  const { t } = useTranslation(lang, 'common');
   const { id, quantity, product_type } = data ?? {};
   const { width } = useWindowSize();
   const { openModal } = useModalAction();
@@ -47,7 +53,7 @@ function RenderPopupOrAddToCart({ data , lang}: { data: Product , lang:string}) 
   }
   return <AddToCart lang={lang} data={data} />;
 }
-const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
+const ProductList: React.FC<ProductProps> = ({ product, className, lang }) => {
   const { name, image, unit, slug, product_type } = product ?? {};
   const { openModal } = useModalAction();
   const { t } = useTranslation('common');
@@ -74,7 +80,7 @@ const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
     <article
       className={cn(
         'flex flex-col product-card-v2 card-image--jump  overflow-hidden relative  grid grid-cols-7 lg:grid-cols-7 gap-2',
-        className
+        className,
       )}
       title={name}
     >
@@ -92,23 +98,24 @@ const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
 
       <div className="col-span-4 ">
         <Link
-            href={`/${lang}${ROUTES.PRODUCTS}/${slug}`}
-            className="text-skin-purple text-sm leading-5 min-h-[40px] line-clamp-2 mb-1.5 hover:text-skin-primary"
+          href={`/${lang}${ROUTES.PRODUCTS}/${slug}`}
+          className="text-skin-purple text-sm leading-5 min-h-[40px] line-clamp-2 mb-1.5 hover:text-skin-primary"
         >
           {name}
         </Link>
-        <div className="text-12px sm:text-sm mt-auto text-gray-400 mb-2">{unit}</div>
+        <div className="text-12px sm:text-sm mt-auto text-gray-400 mb-2">
+          {unit}
+        </div>
         <div className="space-x-2 ">
           <span className="inline-block font-semibold text-sm sm:text-15px lg:text-base text-gray-700">
             {product_type === 'variable' ? `${minPrice} - ${maxPrice}` : price}
           </span>
           {basePrice && (
-              <del className="text-sm text-gray-400 text-opacity-70">
-                {basePrice}
-              </del>
+            <del className="text-sm text-gray-400 text-opacity-70">
+              {basePrice}
+            </del>
           )}
         </div>
-
       </div>
     </article>
   );

@@ -4,6 +4,7 @@ import React from 'react';
 import { getToken } from '@framework/utils/get-token';
 import { CartProvider } from './cart/cart.context';
 import { ModalProvider } from '@components/common/modal/modal.context';
+import {CartItem} from "@contexts/cart/cart.utils";
 
 export interface State {
   isAuthorized: boolean;
@@ -16,7 +17,7 @@ export interface State {
   drawerView: string | null;
   toastText: string;
   isStickyheader: boolean;
-  data?: any;
+  data?: CartItem[];
 }
 
 const initialState = {
@@ -105,7 +106,7 @@ type Action =
 type DRAWER_VIEWS = 'CART_SIDEBAR' | 'MOBILE_MENU' | 'ORDER_DETAILS';
 type ToastText = string;
 
-export const UIContext = React.createContext<State | any>(initialState);
+export const UIContext = React.createContext<State>(initialState);
 
 UIContext.displayName = 'UIContext';
 
@@ -279,7 +280,7 @@ export function UIProvider(props: React.PropsWithChildren<any>) {
     state.displayMobileSearch
       ? dispatch({ type: 'CLOSE_MOBILE_SEARCH' })
       : dispatch({ type: 'OPEN_MOBILE_SEARCH' });
-  const openDrawer = (data?: any) => dispatch({ type: 'OPEN_DRAWER', data });
+  const openDrawer = (data) => dispatch({ type: 'OPEN_DRAWER', data });
   const closeDrawer = () => dispatch({ type: 'CLOSE_DRAWER' });
 
   const setUserAvatar = (_value: string) =>
@@ -333,7 +334,7 @@ export const useUI = () => {
   return context;
 };
 
-export function ManagedUIContext({ children }: React.PropsWithChildren<{}>) {
+export function ManagedUIContext({ children }: React.PropsWithChildren<object>) {
   return (
     <CartProvider>
       <UIProvider>

@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { useTranslation } from 'src/app/i18n/client';
 import Heading from '@components/ui/heading';
-import Text from '@components/ui/text';
-import Input from '@components/ui/form/input';
-import { useForm } from 'react-hook-form';
+// import Text from '@components/ui/text';
+// import Input from '@components/ui/form/input';
+// import { useForm } from 'react-hook-form';
 import cn from 'classnames';
-import CopyToClipboard from 'react-copy-to-clipboard';
+// import CopyToClipboard from 'react-copy-to-clipboard';
 
 import {
   FacebookShareButton,
@@ -25,19 +25,19 @@ interface Props {
   shareUrl: string;
   lang: string;
 }
-interface NewsLetterFormValues {
-  shareLink: string;
-}
-const defaultValues = {
-  shareLink: '',
-};
+// interface NewsLetterFormValues {
+//   shareLink: string;
+// }
+// const defaultValues = {
+//   shareLink: '',
+// };
 
 const SocialShareThis: React.FC<Props> = ({
   className = '',
   shareUrl,
   lang,
 }) => {
-  const { t } = useTranslation(lang,'common');
+  const { t } = useTranslation(lang, 'common');
   return (
     <div className={cn('', className)}>
       <Heading className="text-gray-500 pe-3 sm:text-sm font-normal">

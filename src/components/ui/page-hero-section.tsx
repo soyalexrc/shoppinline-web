@@ -1,6 +1,6 @@
 'use client';
 
-import { Attachment } from '@framework/types';
+// import { Attachment } from '@framework/types';
 import useWindowSize from '@utils/use-window-size';
 import Breadcrumb from '@components/ui/breadcrumb';
 import cn from 'classnames';
@@ -28,9 +28,8 @@ const PageHeroSection: React.FC<HeaderProps> = ({
         {
           'style-variant-white': variant === 'white',
         },
-        className
+        className,
       )}
-
     >
       <div className="relative flex flex-col items-center justify-center w-full">
         <h2
@@ -39,7 +38,7 @@ const PageHeroSection: React.FC<HeaderProps> = ({
             {
               'text-brand-dark': variant === 'default',
               'text-brand-light': variant === 'white',
-            }
+            },
           )}
         >
           <span className="block mb-3 font-bold md:mb-4 lg:mb-5 2xl:mb-7 ">

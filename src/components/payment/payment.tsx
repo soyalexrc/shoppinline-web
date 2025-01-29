@@ -4,7 +4,7 @@ import { useTranslation } from 'src/app/i18n/client';
 
 const PaymentPage: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');
-  let { data, isLoading } = usePaymentQuery();
+  const { data, isLoading } = usePaymentQuery();
   return !isLoading ? (
     <div className="w-full max-w-[1300px] mx-auto">
       <div className="flex flex-wrap">

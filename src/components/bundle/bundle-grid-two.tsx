@@ -6,6 +6,7 @@ import cn from 'classnames';
 import dynamic from 'next/dynamic';
 import { SwiperSlide } from '@components/ui/carousel/slider';
 import { ROUTES } from '@utils/routes';
+import {Bundle} from "@components/cards/bundle-card";
 const Carousel = dynamic(() => import('@components/ui/carousel/carousel'), {
   ssr: false,
 });
@@ -13,7 +14,7 @@ const Carousel = dynamic(() => import('@components/ui/carousel/carousel'), {
 interface Props {
   lang: string;
   className?: string;
-  data: any;
+  data: Bundle[];
 }
 
 const breakpoints = {

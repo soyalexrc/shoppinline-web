@@ -16,7 +16,13 @@ const defaultValues = {
   email: '',
 };
 
-function SubscriptionForm({ lang ,variant  }: { lang: string; variant?: string; }) {
+function SubscriptionForm({
+  lang,
+  variant,
+}: {
+  lang: string;
+  variant?: string;
+}) {
   const { t } = useTranslation(lang, 'forms');
   const {
     register,
@@ -56,11 +62,12 @@ function SubscriptionForm({ lang ,variant  }: { lang: string; variant?: string; 
         id="subscription-email"
         variant="solid"
         className="w-full"
-        inputClassName={cn('ps-10 md:ps-10 pe-10 md:pe-10 2xl:px-11 h-12 rounded-md bg-transparent border-black/10 focus:outline-none focus:shadow-outline text-gray-400',
-            {
-                'xs:border-white/10':  variant === 'home5',
-            }
-            )}
+        inputClassName={cn(
+          'ps-10 md:ps-10 pe-10 md:pe-10 2xl:px-11 h-12 rounded-md bg-transparent border-black/10 focus:outline-none focus:shadow-outline text-gray-400',
+          {
+            'xs:border-white/10': variant === 'home5',
+          },
+        )}
         {...register('email', {
           required: `${t('email-required')}`,
           pattern: {
@@ -81,7 +88,7 @@ function SubscriptionForm({ lang ,variant  }: { lang: string; variant?: string; 
         className="bg-brand text-sm font-medium text-white md:h-12 py-2 px-10   focus:outline-none focus:shadow-outline  transform  rounded-e-md -ml-1"
         aria-label="Subscribe Button"
       >
-          {t('footer:text-btnsubscribe')}
+        {t('footer:text-btnsubscribe')}
       </button>
     </form>
   );
@@ -90,27 +97,33 @@ function SubscriptionForm({ lang ,variant  }: { lang: string; variant?: string; 
 interface Props {
   lang: string;
   className?: string;
-    variant?: string;
+  variant?: string;
 }
 
-const WidgetSubscription: React.FC<Props> = ({ lang, className,variant }) => {
+const WidgetSubscription: React.FC<Props> = ({ lang, className, variant }) => {
   const { t } = useTranslation(lang, 'footer');
 
   return (
-    <div className={cn('flex flex-col',{
-        'text-fill-footer': variant === 'home5' || variant === 'home7',
-        }, className)}
+    <div
+      className={cn(
+        'flex flex-col',
+        {
+          'text-fill-footer': variant === 'home5' || variant === 'home7',
+        },
+        className,
+      )}
     >
-      <Heading variant="base" className={cn('uppercase mb-4 lg:mb-5',
-          {
-              'text-white': variant === 'home5' || variant === 'home7',
-          })}
+      <Heading
+        variant="base"
+        className={cn('uppercase mb-4 lg:mb-5', {
+          'text-white': variant === 'home5' || variant === 'home7',
+        })}
       >
         {t('widget-title-subscribe')}
       </Heading>
 
       <Text className="pb-4">{t('text-subscribe')}</Text>
-      <SubscriptionForm lang={lang} variant={variant}/>
+      <SubscriptionForm lang={lang} variant={variant} />
     </div>
   );
 };

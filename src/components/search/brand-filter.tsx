@@ -50,19 +50,23 @@ export const BrandFilter = ({ lang }: { lang: string }) => {
 
   return (
     <div className="block">
-      <Heading className="uppercase mb-5 block-title">{t('text-brands')}</Heading>
+      <Heading className="uppercase mb-5 block-title">
+        {t('text-brands')}
+      </Heading>
       <div className="flex flex-col">
-        {items?.slice(0, 3)?.map((item: any) => (
-          <CheckBox
-            key={`${item.name}-key-${item.id}`}
-            label={item.name}
-            name={item.name.toLowerCase()}
-            checked={formState.includes(item.slug)}
-            value={item.slug}
-            onChange={handleItemClick}
-            lang={lang}
-          />
-        ))}
+        {items
+          ?.slice(0, 3)
+          ?.map((item: any) => (
+            <CheckBox
+              key={`${item.name}-key-${item.id}`}
+              label={item.name}
+              name={item.name.toLowerCase()}
+              checked={formState.includes(item.slug)}
+              value={item.slug}
+              onChange={handleItemClick}
+              lang={lang}
+            />
+          ))}
         {items!.length > 3 && (
           <div className="w-full">
             <Disclosure>

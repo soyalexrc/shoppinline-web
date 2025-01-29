@@ -48,20 +48,20 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
       amount: data.sale_price ? data.sale_price : data.price,
       baseAmount: data.price,
       currencyCode: 'USD',
-    }
+    },
   );
-  
-  const {  payment } = footer;
+
+  const { payment } = footer;
   const handleChange = () => {
     setShareButtonStatus(!shareButtonStatus);
   };
-  if (isLoading) return <p className={"pt-8 pb-8"}>Loading...</p>;
+  if (isLoading) return <p className={'pt-8 pb-8'}>Loading...</p>;
   const variations = getVariations(data?.variations);
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
       Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
+        attributes.hasOwnProperty(variation),
       )
     : true;
   let selectedVariation: any = {};
@@ -70,8 +70,8 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
     selectedVariation = dataVaiOption?.find((o: any) =>
       isEqual(
         o.options.map((v: any) => v.value).sort(),
-        Object.values(attributes).sort()
-      )
+        Object.values(attributes).sort(),
+      ),
     );
   }
   const item = generateCartItem(data!, selectedVariation);
@@ -191,7 +191,7 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
               {t('text-weight')}:
             </dt>
             <dd className="productView-info-value" data-product-weight="">
-              {data?.weight } KGS
+              {data?.weight} KGS
             </dd>
             <dt className={`productView-info-name w-40 float-left`}>
               {t('text-shipping')}:

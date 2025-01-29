@@ -1,4 +1,4 @@
-const AccountWishlistIcon: React.FC<React.SVGAttributes<{}>> = ({
+const AccountWishlistIcon: React.FC<React.SVGAttributes<object>> = ({
   ...rest
 }) => {
   return (

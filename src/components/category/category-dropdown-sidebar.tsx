@@ -25,7 +25,9 @@ export default function CategoryDropdownSidebar({
     limit: 10,
   });
   return (
-      <aside className={cn('category-mobile-sidebar bg-white rounded p-5', className)}>
+    <aside
+      className={cn('category-mobile-sidebar bg-white rounded p-5', className)}
+    >
       <div className=" mb-3 ">
         <SectionHeader
           sectionHeading={`text-all-categories`}

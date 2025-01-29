@@ -5,7 +5,7 @@ interface Props {
   variant?: Variant;
   className?: string;
   style?: CSSProperties;
-  children?: React.ReactNode | any;
+  children?: React.ReactNode;
   html?: string;
 }
 
@@ -62,11 +62,14 @@ const Heading: React.FC<Props> = ({
           'text-base  text-brand-dark': variant === 'title',
           'font-bold text-fill-base text-xl': variant === 'titleMedium',
           'text-[16px] xl:text-[20px] xl:leading-8': variant === 'titleLarge',
-            'text-fill-base text-[16px] lg:leading-7 font-bold': variant === 'mediumHeading',
-          'text-lg lg:text-xl xl:text-[22px] xl:leading-8  text-brand-dark font-bold font-manrope': variant === 'heading',
-          'text-lg lg:text-xl xl:text-[26px] xl:leading-8  text-brand-dark ': variant === 'checkoutHeading',
+          'text-fill-base text-[16px] lg:leading-7 font-bold':
+            variant === 'mediumHeading',
+          'text-lg lg:text-xl xl:text-[22px] xl:leading-8  text-brand-dark font-bold font-manrope':
+            variant === 'heading',
+          'text-lg lg:text-xl xl:text-[26px] xl:leading-8  text-brand-dark ':
+            variant === 'checkoutHeading',
         },
-        className
+        className,
       )}
       style={style}
       {...htmlContentProps}

@@ -1,5 +1,5 @@
 import Container from '@components/ui/container';
-import Map from '@components/ui/map';
+// import Map from '@components/ui/map';
 import PageHeroSection from '@components/ui/page-hero-section';
 import ContactForm from '@components/common/form/contact-form';
 import ContactSupport from '@components/contact/contact-support';
@@ -9,14 +9,17 @@ export const metadata: Metadata = {
   title: 'Contact Us',
 };
 
-export default async function Page({ params }: { params: any }) {
+type Params = {
+  lang: string
+}
+
+export default async function Page({ params }: { params: Params }) {
   const { lang } = await params;
   return (
     <>
-      <PageHeroSection heroTitle="text-page-contactus" lang={lang}/>
-      <Container className={"mt-10"}>
-        <div
-            className="flex flex-wrap bg-skin-fill w-full  relative z-10 p-5 xl:p-12 my-10">
+      <PageHeroSection heroTitle="text-page-contactus" lang={lang} />
+      <Container className={'mt-10'}>
+        <div className="flex flex-wrap bg-skin-fill w-full  relative z-10 p-5 xl:p-12 my-10">
           <div className="w-full md:w-[53%] xl:w-[60%] md:pe-8 lg:pe-0 2xl:pe-24 lg:mb-0 mb-8">
             <ContactSupport lang={lang} />
           </div>
@@ -24,9 +27,7 @@ export default async function Page({ params }: { params: any }) {
             <ContactForm lang={lang} />
           </div>
         </div>
-       
       </Container>
-      
     </>
   );
 }

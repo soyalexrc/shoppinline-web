@@ -1,4 +1,4 @@
-import Image from '@components/ui/image';
+// import Image from '@components/ui/image';
 import Text from '@components/ui/text';
 import Heading from '@components/ui/heading';
 import { useTranslation } from 'src/app/i18n/client';

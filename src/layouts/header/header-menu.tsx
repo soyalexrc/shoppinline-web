@@ -1,6 +1,6 @@
 import Link from '@components/ui/link';
 import { FaChevronDown } from 'react-icons/fa';
-import {BsChevronDown} from 'react-icons/bs';
+import { BsChevronDown } from 'react-icons/bs';
 import ListMenu from '@components/ui/list-menu';
 import SubMega from '@components/ui/mega/sub-mega';
 import cn from 'classnames';
@@ -15,7 +15,13 @@ interface MenuProps {
   bgPrimary?: boolean;
 }
 
-const HeaderMenu: React.FC<MenuProps> = ({ lang, data, className, bgPrimary,classLink }) => {
+const HeaderMenu: React.FC<MenuProps> = ({
+  lang,
+  data,
+  className,
+  bgPrimary,
+  classLink,
+}) => {
   const { t } = useTranslation(lang, 'menu');
   const [hoverMenu, setHoverMenu] = useState(Boolean(false));
   return (
@@ -31,11 +37,11 @@ const HeaderMenu: React.FC<MenuProps> = ({ lang, data, className, bgPrimary,clas
         >
           <Link
             href={`/${lang}${item.path}`}
-            className={cn('text-brand-dark inline-flex items-center text-sm  py-1 font-semibold relative ',
-                classLink,
-                {'group-hover:text-brand' : !bgPrimary}
+            className={cn(
+              'text-brand-dark inline-flex items-center text-sm  py-1 font-semibold relative ',
+              classLink,
+              { 'group-hover:text-brand': !bgPrimary },
             )}
-
           >
             {t(item.label)}
             {(item?.columns || item.subMenu) && (

@@ -21,14 +21,14 @@ export default function DeliveryTips({ lang }: { lang: string }) {
               <RadioGroup.Option
                 key={tips}
                 value={tips}
-                className={({ active, checked }) =>
+                className={({ checked }) =>
                   cn(
                     'relative rounded-lg px-5 py-4 cursor-pointer focus:outline-none',
-                    checked ? 'bg-brand text-white' : 'bg-gray-100'
+                    checked ? 'bg-brand text-white' : 'bg-gray-100',
                   )
                 }
               >
-                {({ active, checked }) => (
+                {({ checked }) => (
                   <div className="text-center">
                     <RadioGroup.Label
                       as="p"

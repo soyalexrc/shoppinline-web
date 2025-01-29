@@ -3,7 +3,7 @@ import Link from '@components/ui/link';
 import cn from 'classnames';
 import { siteSettings } from '@settings/site-settings';
 
-import React from "react";
+import React from 'react';
 interface Props {
   lang: string;
   variant?: string;

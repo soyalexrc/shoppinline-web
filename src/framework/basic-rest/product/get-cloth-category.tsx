@@ -9,7 +9,7 @@ export const fetchClothtablesCategory = async ({ queryKey }: any) => {
 };
 export const useClothCategoryQuery = (options: QueryOptionsType) => {
   return useQuery<Category[], Error>({
-      queryKey: [API_ENDPOINTS.CLOTH_CATEGORY, options],
-      queryFn: () => fetchClothtablesCategory(options),
-    });
+    queryKey: [API_ENDPOINTS.CLOTH_CATEGORY, options],
+    queryFn: () => fetchClothtablesCategory(options),
+  });
 };

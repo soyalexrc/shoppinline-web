@@ -8,13 +8,13 @@ import { useIsMounted } from '@utils/use-is-mounted';
 import Footer from '@layouts/footer/footer';
 import Header from '@layouts/default/header';
 import { useTranslation } from 'src/app/i18n/client';
-import BackToTopButton from "@components/ui/back-to-top";
+import BackToTopButton from '@components/ui/back-to-top';
 
 function ClientRenderedHighLightedBar({ lang }: { lang: string }) {
   const { t } = useTranslation(lang, 'common');
   const [highlightedBar, setHighlightedBar] = useSessionStorage(
     'highlightedBar',
-    'false'
+    'false',
   );
   return (
     <>
@@ -44,7 +44,6 @@ export default function ModernLayout({
 
   return (
     <div className="flex flex-col min-h-screen">
-
       <Header lang={lang} />
       <main
         className="relative flex-grow pt-5 xl:pt-8 "
@@ -55,7 +54,7 @@ export default function ModernLayout({
         {children}
       </main>
       <Footer lang={lang} showWidgetServices={true} />
-      <BackToTopButton/>
+      <BackToTopButton />
       <MobileNavigation lang={lang} />
     </div>
   );

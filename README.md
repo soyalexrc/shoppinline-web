@@ -21,7 +21,9 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 #### Plantilla de estilos pre seleccionada:
+
 [Aqui](https://preview.themeforest.net/item/motta-multivendor-and-marketplace-wordpress-theme/full_screen_preview/47722442?_ga=2.174926059.838538901.1736421092-807508148.1732047939)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

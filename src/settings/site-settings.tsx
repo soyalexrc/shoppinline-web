@@ -81,11 +81,11 @@ export const siteSettings = {
             path: '/home7',
             label: 'menu-home7',
           },
-        {
+          {
             id: 8,
             path: '/home8',
             label: 'menu-home8',
-        },
+          },
         ],
       },
       {
